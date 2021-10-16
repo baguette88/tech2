@@ -110,6 +110,8 @@ function getEvents() {
 
     var settings = {
         "async": true,
+        
+        "crossOrigin": true,
         "crossDomain": true,
         "url": "https://api.bizzabo.com/api/events",
         "method": "GET",
@@ -118,26 +120,40 @@ function getEvents() {
             "accept": "application/vnd.bizzabo.v2.0+json",
             "authorization": "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
             "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "*",
+            "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
         },
         "data": "{}"
     }
 
 
     $.ajax({
-        "url": "https://api.bizzabo.com/api/events",
-        "async": true,
-        "method": "GET",
-        "crossDomain": true,
-        "Referrer-Policy": "strict-origin-when-cross-origin",
+        url: "https://api.bizzabo.com/api/events",
+        mode:'cors',
+         credentials: 'include',
+        async: true,
+        method: "GET",
+        crossOrigin: true,
+        crossDomain: true,
+        // xhrFields: {
+        //     withCredentials: true
+        // },
+        // "Referrer-Policy": "strict-origin-when-cross-origin",
         "Content-type": "application/x-www-form-urlencoded",
-        "headers": {
+        headers: {
             "accept": "application/vnd.bizzabo.v2.0+json",
             "authorization": "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
-            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin": "https://api.bizzabo.com/api/events",
+            "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
+            "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
+// Access-Control-Allow-Headers: Authorization, Lang
         }
     }).done(function (data) {
         console.log(data);
-    });
+    }
+    
+    )}
+
+    
 
    
-}
