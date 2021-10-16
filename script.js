@@ -135,19 +135,22 @@ function getEvents() {
         method: "GET",
         crossOrigin: true,
         crossDomain: true,
+     
         // xhrFields: {
         //     withCredentials: true
         // },
         // "Referrer-Policy": "strict-origin-when-cross-origin",
-        "Content-type": "application/x-www-form-urlencoded",
+        // "Content-type": "application/x-www-form-urlencoded",
         headers: {
             "accept": "application/vnd.bizzabo.v2.0+json",
+            'Content-Type': 'application/x-www-form-urlencoded',
             "authorization": "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
             "Access-Control-Allow-Origin": "https://api.bizzabo.com/api/events",
             "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
             "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
 // Access-Control-Allow-Headers: Authorization, Lang
         }
+        
     }).done(function (data) {
         console.log(data);
     }
