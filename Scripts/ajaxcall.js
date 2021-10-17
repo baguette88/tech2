@@ -83,7 +83,7 @@ xhr.addEventListener("readystatechange", function () {
     
     console.log(eventArr)                        // eventArr is the data
     document.getElementById("readout1").innerHTML= data.eventArr
-    document.getElementById("readout2").innerHTML= data.eventArr[1].startDate
+    document.getElementById("readout2").innerHTML= data.eventArr[0].startDate
 
 
 ///START HERE TROUBLESHOOT///
