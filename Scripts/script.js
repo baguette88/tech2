@@ -1,1 +1,1 @@
-console.log("final script" + data.eventArr)
+console.log("final script")

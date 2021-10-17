@@ -64,6 +64,8 @@ $.ajax({
   /////////////////////////////////////////////////////////////////////////////////////////////////
     let eventArr = [];
     let data = {eventArr};
+
+    
     //  console.log("object obtained" + data.eventArr)
     
 
@@ -74,9 +76,14 @@ xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
    
     eventArr.push(this.responseText);
+
+
+
+
+    
     console.log(eventArr)                        // eventArr is the data
     document.getElementById("readout1").innerHTML= data.eventArr
-    document.getElementById("readout2").innerHTML= data.eventArr.links[1]
+    document.getElementById("readout2").innerHTML= data.eventArr[1].startDate
 
 
 ///START HERE TROUBLESHOOT///
@@ -97,6 +104,8 @@ xhr.setRequestHeader("accept", "application/vnd.bizzabo.v2.0+json");
 xhr.setRequestHeader("authorization", "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2" );
 
 xhr.send(data);
+
+
 
 // console.log(events)
 
