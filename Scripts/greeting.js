@@ -10,10 +10,12 @@ if (hourNow > 18) {
     greeting = "<b>Good Afternoon</b>";
 } else if (hourNow > 0) {
     greeting = '<b>Good Morning</b>';
-} else { greeting = 'Welcome (calculator error occured)';
+} else { greeting = 'Welcome (greeting.js error occured)';
 }
 
 document.getElementById('lblGreetings').innerHTML =
 '<b>' + greeting + '</b> and Welcome to Bizzabo';
-
 console.log('checked time and greeted user')
+
+console.log(today)
+document.getElementById("localTime").innerHTML= today

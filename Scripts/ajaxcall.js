@@ -5,16 +5,8 @@ $(document).ready(function () {
 console.log("script check1")
 
 function getEvents() {
-
-//   jQuery.ajaxPrefilter(function(options) {
-//     if (options.crossDomain && jQuery.support.cors) {
-//         options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
-//     }
-// });
-
     let settings = {
         "async": true,
-        
         "crossOrigin": true,
         "crossDomain": true,
         "url": "https://cors-anywhere.herokuapp.com/https://api.bizzabo.com/api/events",
@@ -57,15 +49,15 @@ $.ajax({
         "Access-Control-Allow-Methods": POST,GET,PUT,DELETE,
     }
 }).done(function (data) {
-    // console.log(data);
 });
 }
 
   /////////////////////////////////////////////////////////////////////////////////////////////////
     let eventArr = [];
+    
     let data = {eventArr};
 
-    
+    // events = {[   data   ]}
     //  console.log("object obtained" + data.eventArr)
     
 
@@ -75,27 +67,67 @@ var xhr = new XMLHttpRequest();
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
    
-    eventArr.push(this.responseText);
+    // eventArr.push(this.responseText);
+    let events =this.responseText
 
 
-
-
+// // Iterate through each row? 
+// Object.keys(events.content).forEach(function (key) {
+//     eventArr.push(key, events.content[key]);
+//   });
+  
+//   //Created a constructor to load up the event details to be used in the plugin
+//   class eventItem {
+//     constructor(start, end, url, photo, title) {
+//       this.start = start,
+//       this.end = end,
+//       this.url = url,
+//       this.photo = photo
+//       this.title = title
+//       this.backgroundColor = "indianred"
+//       this.textColor = "white"
+//       this.display = 'block'
+//     }
+//   }
+  
+//   //Created global variable to hold the new eventItems
+//   let eventArr = []
+  
+//   //Loop through the array of objects and map the applicable variables
+//   for (i = 1; i < eventArr.length; i++) {
     
-    console.log(eventArr)                        // eventArr is the data
-    document.getElementById("readout1").innerHTML= data.eventArr
-    document.getElementById("readout2").innerHTML= data.eventArr[0].startDate
+//     let events = new eventItem(eventArr[i].startDate, eventArr[i].endDate, eventArr[i].websiteUrl, eventArr[i].coverPhotoUrl, eventArr[i].name, eventArr[i].backgroundColor, eventArr[i].textColor, eventArr[i].display)
+  
+//     startandend.push(events)
+//   }
+  
+  
+//   //Call the third party FullCalendar to create a calendar with events
+//   document.addEventListener('DOMContentLoaded', function () {
+//     var calendarEl = document.getElementById('calendar');
+  
+//     var calendar = new FullCalendar.Calendar(calendarEl, {
+//       initialView: 'dayGridMonth',
+//       initialDate: '2021-02-17',
+//       headerToolbar: {
+//         left: 'prev,next today',
+//         center: 'title',
+//         right: 'dayGridMonth,timeGridWeek,timeGridDay'
+//       },
+//       //Insert the array of objects created before into the events property to get the corresponding key-value pairs
+//       events: eventArr,
+  
+  
+//     });
+//     calendar.render();
+//   });
 
 
-///START HERE TROUBLESHOOT///
-    // Object.keys(eventArr.content).forEach(function (key) {      //Iterate through?
-    //   eventArr.push(key, eventArr.content[key]);
-    // });    
+    console.log(events)                        // eventArr is the data
+    document.getElementById("readout1").innerHTML= events
+    // document.getElementById("readout2").innerHTML= events
+////RETRIEVING SPECIFIC DATA
 
-
-
-
-
-    // let this.responseText 
   }
 });
 
@@ -104,8 +136,6 @@ xhr.setRequestHeader("accept", "application/vnd.bizzabo.v2.0+json");
 xhr.setRequestHeader("authorization", "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2" );
 
 xhr.send(data);
-
-
 
 // console.log(events)
 
