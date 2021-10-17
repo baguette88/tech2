@@ -8,33 +8,42 @@ console.log("check1")
 
 function getEvents() {
 
-    var settings = {
+//   jQuery.ajaxPrefilter(function(options) {
+//     if (options.crossDomain && jQuery.support.cors) {
+//         options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+//     }
+// });
+
+    let settings = {
         "async": true,
         
         "crossOrigin": true,
         "crossDomain": true,
-        "url": "https://api.bizzabo.com/api/events",
+        "url": "https://cors-anywhere.herokuapp.com/https://api.bizzabo.com/api/events",
         "method": "GET",
         "Content-type": "application/x-www-form-urlencoded",
         "headers": {
             "accept": "application/vnd.bizzabo.v2.0+json",
             "authorization": "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "*",
+            "Access-Control-Allow-Origin": "https://hardcore-bhabha-75caeb.netlify.app/",
+            // "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Methods": POST,GET,PUT,DELETE,
         },
         "data": "{}"
     }
 
 $.ajax({
-    "url": "https://api.bizzabo.com/api/events",
+    "url": "https://cors-anywhere.herokuapp.com/https://api.bizzabo.com/api/events",
     "type": "GET",
     "xhrFields" : {
         "accept": "application/vnd.bizzabo.v2.0+json",
         "authorization": "bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
-        "Access-Control-Allow-Origin": "*",
-        // "Access-Control-Allow-Headers": "X-PINGOVER",
-           "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Origin": "https://hardcore-bhabha-75caeb.netlify.app/",
+        "Access-Control-Allow-Origin": "http://127.0.0.1:5500/",
+   
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Methods": POST,GET,PUT,DELETE,
         "Access-Control-Allow-Credentials": "true",
         "Access-Control-Allow-Methods": ["GET", "OPTIONS", "POST"]
 
@@ -43,9 +52,12 @@ $.ajax({
     "headers": {
         "accept": "application/vnd.bizzabo.v2.0+json",
         "authorization": "Bearer" ,
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Credentials": "true"
-        // "CORS": "http://localhost:8080"
+        "Access-Control-Allow-Origin": "http://127.0.0.1:5500/",
+        "Access-Control-Allow-Origin": "https://hardcore-bhabha-75caeb.netlify.app/",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Headers": Authorization, Lang,
+        "Access-Control-Allow-Methods": POST,GET,PUT,DELETE,
+      // "CORS": "https://hardcore-bhabha-75caeb.netlify.app/"
     }
 }).done(function (data) {
     console.log(data);
@@ -55,17 +67,17 @@ $.ajax({
     var data = "{}";
 
 var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
+// xhr.withCredentials = true;
 
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
-    console.log(this.responseText);
+    console.log(this.responseText + "new XML request Readout:");
   }
 });
 
-xhr.open("GET", "https://api.bizzabo.com/api/events/");
+xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://api.bizzabo.com/api/events/");
 xhr.setRequestHeader("accept", "application/vnd.bizzabo.v2.0+json");
-xhr.setRequestHeader("authorization", "Bearer" );
+xhr.setRequestHeader("authorization", "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2" );
 
 xhr.send(data);
 
@@ -73,7 +85,7 @@ xhr.send(data);
 
 const requestCurrent = () => {
   $.ajax({
-    url: "https://api.bizzabo.com/api/events",
+    url: "https://cors-anywhere.herokuapp.com/https://api.bizzabo.com/api/events",
     type: "GET",
     headers: {
       "content-type": "application/vnd.bizzabo.v2.0+json",
