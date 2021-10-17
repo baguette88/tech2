@@ -68,7 +68,7 @@ $.ajax({
 });
 }
 
-    var data = "{}";
+    let data = "{}";
     console.log(data)
 
 var xhr = new XMLHttpRequest();
@@ -77,7 +77,7 @@ var xhr = new XMLHttpRequest();
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
    
-    // console.log(this.responseText + "new XML request Readout:");
+    console.log(this.responseText + "new XML request Readout:");
     // let this.responseText 
   }
 });
