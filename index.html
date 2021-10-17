@@ -24,9 +24,13 @@ crossorigin="anonymous"></script>
       <!-- <img src="5.png" alt="Image or logo of bizzabo"> -->
       
       <div class="w3-container">
-        <p>A car is a wheeled, self-powered motor vehicle used for transportation.</p>
+        <p id="username">{name}</p>
+        <p id="todayDate">{date}</p>
+  
       </div>
-      <br> <br> <br> <br>
+      <br> 
+      <H1>Your Schedule: </H1>
+      Today - 
       <div class="container col-sm-4 col-md-7 col-lg-4 mt-5">
         <div class="card">
             <h3 class="card-header" id="monthAndYear"></h3>
@@ -139,11 +143,16 @@ crossorigin="anonymous"></script>
 
       <br> <br> <br> <br>
       <div class="w3-container w3-teal">
-        <p>Contact Us</p>
+          <h2> Visualization of JSON data</h2>
+        <p id="readout2">Readout2</p>
+        <br>
+        Readout1 - Full JSON
+        <p id="readout1">Readout</p>
       </div>
 </body>
 <script src="scripts/greeting.js"></script>
-<script src="scripts/script.js"></script>
+
 <script src="scripts/calendar.js"></script>
 <script src="scripts/ajaxcall.js"></script>
+<script src="scripts/script.js"></script>
 </html>

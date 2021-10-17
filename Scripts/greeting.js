@@ -16,4 +16,4 @@ if (hourNow > 18) {
 document.getElementById('lblGreetings').innerHTML =
 '<b>' + greeting + '</b> and Welcome to Bizzabo';
 
-console.log('pulled date successfully')
+console.log('checked time and greeted user')
