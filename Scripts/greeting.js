@@ -1,5 +1,5 @@
 console.log('script start...')
-// let today = new Date();  using globally
+let today = new Date();  
 let hourNow = today.getHours();
 let greeting;
 
