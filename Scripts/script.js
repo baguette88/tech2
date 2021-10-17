@@ -29,8 +29,8 @@ function getEvents() {
         "headers": {
             "accept": "application/vnd.bizzabo.v2.0+json",
             "authorization": "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
-            "Access-Control-Allow-Origin": "https://hardcore-bhabha-75caeb.netlify.app/",
-            // "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin": "https://techjbb.netlify.app/",
+     
             "Access-Control-Allow-Headers": "*",
             "Access-Control-Allow-Methods": POST,GET,PUT,DELETE,
         },
@@ -43,7 +43,7 @@ $.ajax({
     "xhrFields" : {
         "accept": "application/vnd.bizzabo.v2.0+json",
         "authorization": "bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
-        "Access-Control-Allow-Origin": "https://hardcore-bhabha-75caeb.netlify.app/",
+        "Access-Control-Allow-Origin": "https://techjbb.netlify.app/",
         "Access-Control-Allow-Origin": "http://127.0.0.1:5500/",
    
         "Access-Control-Allow-Headers": "*",
@@ -57,18 +57,17 @@ $.ajax({
         "accept": "application/vnd.bizzabo.v2.0+json",
         "authorization": "Bearer" ,
         "Access-Control-Allow-Origin": "http://127.0.0.1:5500/",
-        "Access-Control-Allow-Origin": "https://https://techjbb.netlify.app//",
+        "Access-Control-Allow-Origin": "https://techjbb.netlify.app/",
         "Access-Control-Allow-Credentials": "true",
         "Access-Control-Allow-Headers": Authorization, Lang,
         "Access-Control-Allow-Methods": POST,GET,PUT,DELETE,
-      // "CORS": "https://https://techjbb.netlify.app//"
     }
 }).done(function (data) {
     // console.log(data);
 });
 }
 
-  
+  /////////////////////////////////////////////////////////////////////////////////////////////////
     let eventArr = [];
     let data = {eventArr};
      console.log("object obtained" + data)
@@ -105,8 +104,6 @@ xhr.send(data);
 
 // console.log(events)
 
-
-
 const requestCurrent = () => {
   $.ajax({
     url: "https://cors-anywhere.herokuapp.com/https://api.bizzabo.com/api/events",
@@ -120,14 +117,6 @@ const requestCurrent = () => {
   }).then(function (data) {
     console.log(data)
     console.log("current request Succesful")
-
-
   })
 }
 
-
-
-
-
-    
-//     
