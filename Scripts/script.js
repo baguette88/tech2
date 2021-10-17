@@ -33,7 +33,8 @@ $.ajax({
         "accept": "application/vnd.bizzabo.v2.0+json",
         "authorization": "bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "X-PINGOVER",
+        // "Access-Control-Allow-Headers": "X-PINGOVER",
+           "Access-Control-Allow-Headers": "*",
         "Access-Control-Allow-Credentials": "true",
         "Access-Control-Allow-Methods": ["GET", "OPTIONS", "POST"]
 
@@ -76,7 +77,7 @@ const requestCurrent = () => {
     type: "GET",
     headers: {
       "content-type": "application/vnd.bizzabo.v2.0+json",
-      "authorization": "Bearer" ,      
+      "authorization": "Bearer",      
     },
     data: {
     }
