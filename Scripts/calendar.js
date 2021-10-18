@@ -10,7 +10,6 @@
  let monthAndYear = document.getElementById("monthAndYear");
  showCalendar(currentMonth, currentYear);
  
- 
  function next() {
      currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
      currentMonth = (currentMonth + 1) % 12;
@@ -72,13 +71,8 @@
                  row.appendChild(cell);
                  date++;
              }
- 
- 
          }
- 
          tbl.appendChild(row); // appending each row into calendar body.
      }
- 
- 
  }
 console.log("calendar drawn")

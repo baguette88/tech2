@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- <link rel='stylesheet' type='text/css' href='fullcalendar.css' /> -->
+<!-- <script type='text/javascript' src='jquery.js'></script> -->
+<!-- <script type='text/javascript' src='fullcalendar.js'></script> -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +15,25 @@ src="https://code.jquery.com/jquery-3.4.1.min.js"
 integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 crossorigin="anonymous"></script>  
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<!-- Calendar initialization-->
+    <meta charset='utf-8' />
+    <link href='lib/main.css' rel='stylesheet' />
 </head>
+    <script src='lib/main.js'></script>
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth'
+        });
+        calendar.render();
+      });
+
+    </script>
 <body>
+
     Jeffrey Brown Tech Interview <br>
    <h1> <p id="lblGreetings"> </p></h1>
 
@@ -25,13 +45,13 @@ crossorigin="anonymous"></script>
       <!-- <img src="5.png" alt="Image or logo of bizzabo"> -->
       
       <div class="w3-container">
-        <p id="username">{name}</p>
-        <p id="todayDate">{date}</p>
+        <!-- <p id="username">{name}</p>
+        <p id="todayDate">{date}</p> -->
   
       </div>
-      <br> 
       <H1>Your Schedule: </H1>
       Today - 
+      <div id='calendar'></div>
       <div class="container col-sm-4 col-md-7 col-lg-4 mt-5">
         <div class="card">
             <h3 class="card-header" id="monthAndYear"></h3>
@@ -143,6 +163,7 @@ crossorigin="anonymous"></script>
             crossorigin="anonymous"></script>
 
       <br> <br> <br> <br>
+     
       <div class="w3-container w3-teal">
           <h2> Visualization of JSON data</h2>
         <p id="readout2">Readout2</p>

@@ -16,7 +16,6 @@ function getEvents() {
             "accept": "application/vnd.bizzabo.v2.0+json",
             "authorization": "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
             "Access-Control-Allow-Origin": "https://techjbb.netlify.app/",
-     
             "Access-Control-Allow-Headers": "*",
             "Access-Control-Allow-Methods": POST,GET,PUT,DELETE,
         },
@@ -31,7 +30,6 @@ $.ajax({
         "authorization": "bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
         "Access-Control-Allow-Origin": "https://techjbb.netlify.app/",
         "Access-Control-Allow-Origin": "http://127.0.0.1:5500/",
-   
         "Access-Control-Allow-Headers": "*",
         "Access-Control-Allow-Methods": POST,GET,PUT,DELETE,
         "Access-Control-Allow-Credentials": "true",
@@ -71,12 +69,45 @@ xhr.addEventListener("readystatechange", function () {
     let events =this.responseText
 
 
+    
+//FullCalendar Plugin Mechanics
+$(document).ready(function(){
+// $(function()
+// {
+
+// })
+
+  // $('#calendar').fullCalendar
+  // editable: trueweekMode: 'liquid'
+  // url: #
+  // events: [
+
+  // ]
+
+  // dayClick: function() {
+  //   alert('a day has been clicked!');
+  // }
+
+  // $('#calendar').fullCalendar('next');
+  // // toggles next day or week
+
+
+  // calendar.render();
+  //render the calendar
+
+  // .fullCalendar( ‘destroy’ )
+  //to clear calendar
+}
+)
+
+
+
 // // Iterate through each row? 
 // Object.keys(events.content).forEach(function (key) {
 //     eventArr.push(key, events.content[key]);
 //   });
   
-//   //Created a constructor to load up the event details to be used in the plugin
+//   //Create a constructor to load up the event details to be used in the plugin
 //   class eventItem {
 //     constructor(start, end, url, photo, title) {
 //       this.start = start,
@@ -90,7 +121,7 @@ xhr.addEventListener("readystatechange", function () {
 //     }
 //   }
   
-//   //Created global variable to hold the new eventItems
+// global variable to hold the new eventItems
 //   let eventArr = []
   
 //   //Loop through the array of objects and map the applicable variables
