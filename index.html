@@ -2,22 +2,21 @@
 <html lang="en">
 <head>
     <!-- <link rel='stylesheet' type='text/css' href='fullcalendar.css' /> -->
-<!-- <script type='text/javascript' src='jquery.js'></script> -->
-<!-- <script type='text/javascript' src='fullcalendar.js'></script> -->
+    <!-- <script type='text/javascript' src='jquery.js'></script> -->
+    <!-- <script type='text/javascript' src='fullcalendar.js'></script> -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
     integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 <script
 src="https://code.jquery.com/jquery-3.4.1.min.js"
 integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 crossorigin="anonymous"></script>  
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
+ 
 <!-- Calendar initialization-->
-    <meta charset='utf-8' />
     <link href='lib/main.css' rel='stylesheet' />
 </head>
     <script src='lib/main.js'></script>
@@ -35,24 +34,23 @@ crossorigin="anonymous"></script>
 <body>
 
     Jeffrey Brown Tech Interview <br>
-   <h1> <p id="lblGreetings"> </p></h1>
+<br>
+   <h1> <p id="lblGreetings"> </p></h1> 
 
     <div class="w3-container w3-teal">
         <!-- <h1>Bizzabo</h1> -->
         <h2 id="localTime"></h2>
       </div>
       
-      <!-- <img src="5.png" alt="Image or logo of bizzabo"> -->
-      
       <div class="w3-container">
         <!-- <p id="username">{name}</p>
         <p id="todayDate">{date}</p> -->
   
       </div>
-      <H1>Your Schedule: </H1>
-      Today - 
-      <div id='calendar'></div>
-      <div class="container col-sm-4 col-md-7 col-lg-4 mt-5">
+       <img src="bizzabo.png" alt="Image or logo of bizzabo">
+      Your Schedule: UserName
+    <div id='calendar'></div>
+      <!-- <div class="container col-sm-4 col-md-7 col-lg-4 mt-5">
         <div class="card">
             <h3 class="card-header" id="monthAndYear"></h3>
             <table class="table table-bordered table-responsive-sm" id="calendar">
@@ -141,14 +139,15 @@ crossorigin="anonymous"></script>
                 <option value=2029>2029</option>
                 <option value=2030>2030</option>
             </select></form>
-        </div>
-    </div>
+        </div> -->
+    </div> -->
     <div class="w3-container w3-teal">
-        <p>Contact Us</p>
+        <p>Jeffrey Brown - jbrown7407@gmail.com</p>
       </div>
 
-    <button name="jump" onclick="jump()">Go</button>
-    
+    <!-- <button name="jump" onclick="jump()">Go</button> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <!-- Optional JavaScript for bootstrap -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -162,8 +161,22 @@ crossorigin="anonymous"></script>
             integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
             crossorigin="anonymous"></script>
 
-      <br> <br> <br> <br>
-     
+
+          
+        </div>
+        
+          <div class="about"> 
+          <br/>
+          <center>
+               <center class="h2">Jeffrey Brown </br> jbrown7407@gmail.com</center> 
+               
+         <br /> <img id="oo7" src="007.jpg">
+         <h1><a href="https://www.linkedin.com/in/jeffrey-brown7407/" target="_blank">  <i class="fa fa-linkedin w3-hover-opacity"></i> </a>
+                <a href="https://github.com/jbrown7407" target="_blank"> <i class="fa fa-github w3-hover-opacity"></i> </a> 
+              
+                </center>
+          </div>
+      <br>
       <div class="w3-container w3-teal">
           <h2> Visualization of JSON data</h2>
         <p id="readout2">Readout2</p>
@@ -172,9 +185,11 @@ crossorigin="anonymous"></script>
         <p id="readout1">Readout</p>
       </div>
 </body>
-<script src="scripts/greeting.js"></script>
 
-<script src="scripts/calendar.js"></script>
+    <!-- Running these scripts after initial HTML so page is not blank with an error -->
+<script src="scripts/greeting.js"></script>
+<!-- <script src="scripts/calendar.js"></script>  -->
+<!-- comment out the above script to remove *old* calendar -->
 <script src="scripts/ajaxcall.js"></script>
 <script src="scripts/script.js"></script>
 </html>

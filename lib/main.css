@@ -285,16 +285,23 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: grab
+    
+
   }
 .fc .fc-toolbar.fc-header-toolbar {
     margin-bottom: 1.5em;
+    background-color: rgb(238, 238, 238);
+    text-align: center;
   }
 .fc .fc-toolbar.fc-footer-toolbar {
     margin-top: 1.5em;
+    margin: 24px;
   }
 .fc .fc-toolbar-title {
     font-size: 1.75em;
-    margin: 0;
+    text-align: center;
+    margin: 24px;
   }
 .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {
     margin-left: .75em; /* space between */
@@ -1829,6 +1836,7 @@ vertical slots in both the header AND the body
 .fc .fc-datagrid-expander .fc-icon { /* the expander and spacers before the expander */
       display: inline-block;
       width: 1em; /* ensure constant width, esp for empty icons */
+      border: 2px solid red;
     }
 .fc .fc-datagrid-expander-placeholder {
     cursor: auto;

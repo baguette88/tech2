@@ -11,12 +11,28 @@ body {
     font-family: verdana;
     font-size: 20px;
   }
-
+#oo7 {
+border-radius: 100px;
+border-radius: 25%;
+}
   #lblGreeting {
     font-family: verdana;
     margin: auto;
     width: 50%;
     border: 3px solid red;
     padding: 10px;
-
+    margin: 24px;
   }
+
+  .fc .fc-col-header-cell-cushion {
+    display: inline-block;
+    padding: 2px 4px;
+  }
+
+.fc-header-toolbar fc-toolbar {
+  color:red;
+  background-color: red;
+}
+/* img {
+  float: inline;
+} */

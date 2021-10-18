@@ -1,1 +1,1 @@
-console.log("final script")
+console.log("all scripts succesful")
