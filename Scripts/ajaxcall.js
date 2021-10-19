@@ -20,38 +20,35 @@ function getEvents() {
             "Access-Control-Allow-Methods": POST,GET,PUT,DELETE,
         },
         "data": "{}"
-    }
+  }
+      $.ajax({
+          "url": "https://cors-anywhere.herokuapp.com/https://api.bizzabo.com/api/events", //added route before API
+          "type": "GET",
+          "xhrFields" : {
+              "accept": "application/vnd.bizzabo.v2.0+json",
+             "authorization": "bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
+              "Access-Control-Allow-Origin": "https://techjbb.netlify.app/",
+             "Access-Control-Allow-Origin": "http://127.0.0.1:5500/",
+             "Access-Control-Allow-Headers": "*",
+             "Access-Control-Allow-Methods": POST,GET,PUT,DELETE,
+              "Access-Control-Allow-Credentials": "true",
+              "Access-Control-Allow-Methods": ["GET", "OPTIONS", "POST"]
+         },
+          "crossDomain": "true",
+         "headers": {
+              "accept": "application/vnd.bizzabo.v2.0+json",
+             "authorization": "Bearer" ,
+              "Access-Control-Allow-Origin": "http://127.0.0.1:5500/",
+             "Access-Control-Allow-Origin": "https://techjbb.netlify.app/",
+             "Access-Control-Allow-Credentials": "true",
+             "Access-Control-Allow-Headers": Authorization, Lang,
+             "Access-Control-Allow-Methods": POST,GET,PUT,DELETE,
+          }
+      }).done(function (data) {
+      });
+  }
 
-$.ajax({
-    "url": "https://cors-anywhere.herokuapp.com/https://api.bizzabo.com/api/events", //added route before API
-    "type": "GET",
-    "xhrFields" : {
-        "accept": "application/vnd.bizzabo.v2.0+json",
-        "authorization": "bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
-        "Access-Control-Allow-Origin": "https://techjbb.netlify.app/",
-        "Access-Control-Allow-Origin": "http://127.0.0.1:5500/",
-        "Access-Control-Allow-Headers": "*",
-        "Access-Control-Allow-Methods": POST,GET,PUT,DELETE,
-        "Access-Control-Allow-Credentials": "true",
-        "Access-Control-Allow-Methods": ["GET", "OPTIONS", "POST"]
-
-    },
-    "crossDomain": "true",
-    "headers": {
-        "accept": "application/vnd.bizzabo.v2.0+json",
-        "authorization": "Bearer" ,
-        "Access-Control-Allow-Origin": "http://127.0.0.1:5500/",
-        "Access-Control-Allow-Origin": "https://techjbb.netlify.app/",
-        "Access-Control-Allow-Credentials": "true",
-        "Access-Control-Allow-Headers": Authorization, Lang,
-        "Access-Control-Allow-Methods": POST,GET,PUT,DELETE,
-    }
-}).done(function (data) {
-});
-}
-
-
-  /////////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////
     let eventArr = [];
     let data = eventArr;
   
@@ -60,16 +57,16 @@ var xhr = new XMLHttpRequest();
 
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
+    //******************************************************************
     //**THIS IS WHERE JSON IS GETTING MASHED IN IMPROPERLY */
     let events =this.responseText
-    
+     //******************************************************************
 
 //NEED TO PROPERLY LOOP INTO ARRAY
     // Object.keys(events.content).forEach(function (key) {
     //   eventArr.push(key, events.content[key]);
     // });
   
-
 
 //CONSTRUCTOR
     class eventItem {
@@ -91,13 +88,7 @@ xhr.addEventListener("readystatechange", function () {
     //OBJECT CREATION
     //ERROR HERE UNDEFINED OBJECT ******
 
-   // ******
-
-   // ******
-
   //Loop through array of objects, map variables
-
-
   for (i = 1; i < eventArr.length; i++) {
     
     let events = new eventItem(eventArr[i].startDate, eventArr[i].endDate, eventArr[i].websiteUrl, eventArr[i].coverPhotoUrl, eventArr[i].name, eventArr[i].backgroundColor, eventArr[i].textColor, eventArr[i].display)
@@ -114,14 +105,6 @@ $(document).ready(function(){
  $(function()
  {
    console.log("Calendar Plugin Activated!")
-  //  alert('Calendar Plugin Activated!');
-  // console.log(events)
-
-  //****** LOGGING SPECIC ITEMS
-  // console.log("SUCCESS!!!!!" + events)
-
-
-
 
   console.log("SUCCESS!!!!!" + events[4])
   console.log("SUCCESS!!!!!" + eventArr[4])
@@ -157,20 +140,17 @@ $(document).ready(function(){
     //   events: data
     // });
     
-    $('#calendar').on('click', '.fc-next-button', function() {
-      //alert('clicked');
-      $('#calendar').fullCalendar( 'removeEvents' );
-      $('#calendar').fullCalendar( 'addEventSource', newData );
-    });
-    $('#calendar').on('click', '.fc-prev-button', function() {
-      //alert('clicked');
-      $('#calendar').fullCalendar( 'removeEvents' );
-      $('#calendar').fullCalendar( 'addEventSource', data );
-    });
-  
-  });
-
-
+  //   $('#calendar').on('click', '.fc-next-button', function() {
+  //     //alert('clicked');
+  //     $('#calendar').fullCalendar( 'removeEvents' );
+  //     $('#calendar').fullCalendar( 'addEventSource', newData );
+  //   });
+  //   $('#calendar').on('click', '.fc-prev-button', function() {
+  //     //alert('clicked');
+  //     $('#calendar').fullCalendar( 'removeEvents' );
+  //     $('#calendar').fullCalendar( 'addEventSource', data );
+  //   });
+  // });
 
 
   // //REDUNDANT CALL AT 132?
