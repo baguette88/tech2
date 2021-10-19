@@ -60,11 +60,9 @@ var xhr = new XMLHttpRequest();
 
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
-    let events =this.responseText
-    
 
-
-    Object.keys(events.content).forEach(function (key) {
+    //THIS IS WHERE I AM 
+    let events =this.responseText.keys(events.content).forEach(function (key) {
       eventArr.push(key, events.content[key]);
     });
   
