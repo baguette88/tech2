@@ -1,4 +1,4 @@
-//Retrieved the events using Postman for reference during early CORS error troubleshooting
+
     "links": [
       {
         "rel": "self",
@@ -6,6 +6,7 @@
       }
     ],
     "content": [
+    
       {
         "coverPhotoUrl": "https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/v1560184596/rb02gln4zuywwzravawc.jpg",
         "supportEmail": "enrique@bizzabo.com",

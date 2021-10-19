@@ -57,16 +57,21 @@ var xhr = new XMLHttpRequest();
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
     console.log("JSON RECEIEVED:      "+this.responseText)
+    // let eventArr = [];
+    // let data = eventArr;
+  
     //******************************************************************
     //**THIS IS WHERE JSON IS GETTING MASHED IN IMPROPERLY */
     let events =this.responseText
      //******************************************************************
-
+     Object.keys(events.content).forEach(function (key) {
+      eventArr.push(key, events.content[key]);
+    });
        //******************************************************************
 //NEED TO PROPERLY LOOP INTO ARRAY
-    // Object.keys(events.content).forEach(function (key) {
-    //   eventArr.push(key, events.content[key]);
-    // });
+// Object.keys(events.content).forEach(function (key) {
+//   eventArr.push(key, events.content[key]);
+// });
     //******************************************************************
 
 //CONSTRUCTOR eventItem
@@ -75,15 +80,15 @@ xhr.addEventListener("readystatechange", function () {
         this.start = start,
         this.end = end,
         this.url = url,
-        this.photo = photo
         this.title = title
-        this.backgroundColor = "indianred"
-        this.textColor = "white"
+        this.backgroundColor = "lightblue"
+        this.textColor = "black"
         this.display = 'block'
+        this.photo = photo
       }
     }
   
-
+    let startandend = []
   //Loop through array of objects, map variables
   for (i = 1; i < eventArr.length; i++) {
     
@@ -95,6 +100,20 @@ xhr.addEventListener("readystatechange", function () {
 
     console.log("eventArr array contains JSON object")
 // console.log(events)
+
+// $(function() {
+
+//   // page is now ready, initialize the calendar...
+
+//   $('#calendar').fullCalendar({
+//     console.log("FullCal")
+//     // put your options and callbacks here
+//   })
+
+// });
+
+
+
 
 //FullCalendar Plugin Mechanics
 $(document).ready(function(){
@@ -113,9 +132,6 @@ $(document).ready(function(){
   // }
 
   // $('#calendar').fullCalendar('next');   //toggles next day or week
-
-  // calendar.render();
-  //render the calendar
 
   // .fullCalendar( ‘destroy’ )
   //to clear calendar
@@ -153,7 +169,7 @@ $(document).ready(function(){
   
     let calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
-      initialDate: '2021-02-17',
+      initialDate: '2021-10-23',
       headerToolbar: {
         left: 'prev,next today',
         center: 'title',
@@ -161,7 +177,7 @@ $(document).ready(function(){
       },
       //TOGGLE THROUGH MONTH/WEEK/DAY
     
-      events: data,
+      events: startandend,
       //changed from events: eventArr
   
   
