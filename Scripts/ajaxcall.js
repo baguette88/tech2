@@ -97,6 +97,7 @@ $(document).ready(function(){
    console.log("Calendar Plugin Activated!")
    alert('Calendar Plugin Activated!');
   console.log(events)
+  console.log("SUCCESS!!!!!" + data.content[0].coverPhotoUrl)
  })
 
 
@@ -129,29 +130,56 @@ $(document).ready(function(){
     }
   }
   
+  $(document).ready(function() {
 
-  //REDUNDANT CALL AT 132?
-  // Call FullCalendar
-  document.addEventListener('DOMContentLoaded', function () {
-    var calendarEl = document.getElementById('calendar');
-  
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth',
-      initialDate: '2021-02-17',
-      headerToolbar: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay'
-      },
+    // $('#calendar').fullCalendar({
+    //   header: {
+    //     left: 'prev,next today',
+    //     center: 'title',
+    //     right: 'month,agendaWeek,agendaDay'
+    //   },
+    //   defaultDate: '2015-02-12',
+    //   editable: true,
+    //   eventLimit: true, // allow "more" link when too many events
+    //   events: data
+    // });
     
-      events: eventArr,
-  
-  
+    $('#calendar').on('click', '.fc-next-button', function() {
+      //alert('clicked');
+      $('#calendar').fullCalendar( 'removeEvents' );
+      $('#calendar').fullCalendar( 'addEventSource', newData );
     });
-    calendar.render();
+    $('#calendar').on('click', '.fc-prev-button', function() {
+      //alert('clicked');
+      $('#calendar').fullCalendar( 'removeEvents' );
+      $('#calendar').fullCalendar( 'addEventSource', data );
+    });
+  
   });
 
 
+
+
+  // //REDUNDANT CALL AT 132?
+  // // Call FullCalendar
+  // document.addEventListener('DOMContentLoaded', function () {
+  //   var calendarEl = document.getElementById('calendar');
+  
+  //   var calendar = new FullCalendar.Calendar(calendarEl, {
+  //     initialView: 'dayGridMonth',
+  //     initialDate: '2021-02-17',
+  //     headerToolbar: {
+  //       left: 'prev,next today',
+  //       center: 'title',
+  //       right: 'dayGridMonth,timeGridWeek,timeGridDay'
+  //     },
+    
+  //     events: eventArr,
+  
+  
+  //   });
+  //   calendar.render();
+  // });
   
     document.getElementById("readout1").innerHTML= events
     // document.getElementById("readout2").innerHTML= events
@@ -179,7 +207,8 @@ const requestCurrent = () => {
     data: {
     }
   }).then(function (data) {
-    console.log(data)
+    // console.log(data)
+  
     console.log("current request Succesful")
   })
 }
