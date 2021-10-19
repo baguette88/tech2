@@ -54,7 +54,6 @@ function getEvents() {
   
 var xhr = new XMLHttpRequest();
 // xhr.withCredentials = true;  // REMOVING THIS LINE ELIMINATED CORS ERROR COMBINED W PROXY USE IN URL
-
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
     //******************************************************************
@@ -62,11 +61,12 @@ xhr.addEventListener("readystatechange", function () {
     let events =this.responseText
      //******************************************************************
 
+       //******************************************************************
 //NEED TO PROPERLY LOOP INTO ARRAY
     // Object.keys(events.content).forEach(function (key) {
     //   eventArr.push(key, events.content[key]);
     // });
-  
+    //******************************************************************
 
 //CONSTRUCTOR
     class eventItem {
@@ -81,12 +81,7 @@ xhr.addEventListener("readystatechange", function () {
         this.display = 'block'
       }
     }
-    //LOOP  DATA INTO THE ARRAY BY DATE?
-    
-    // eventArr.push(events) //REPALCE THIS WITH FUNCTION BELOW PROPERLY LOOPING THROUGH ARRAY
-
-    //OBJECT CREATION
-    //ERROR HERE UNDEFINED OBJECT ******
+  
 
   //Loop through array of objects, map variables
   for (i = 1; i < eventArr.length; i++) {
@@ -156,23 +151,23 @@ $(document).ready(function(){
   // //REDUNDANT CALL AT 132?
   // // Call FullCalendar
   // document.addEventListener('DOMContentLoaded', function () {
-  //   var calendarEl = document.getElementById('calendar');
+    var calendarEl = document.getElementById('calendar');
   
-  //   var calendar = new FullCalendar.Calendar(calendarEl, {
-  //     initialView: 'dayGridMonth',
-  //     initialDate: '2021-02-17',
-  //     headerToolbar: {
-  //       left: 'prev,next today',
-  //       center: 'title',
-  //       right: 'dayGridMonth,timeGridWeek,timeGridDay'
-  //     },
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      initialDate: '2021-02-17',
+      headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+      },
     
-  //     events: eventArr,
+      events: eventArr,
   
   
-  //   });
-  //   calendar.render();
-  // });
+    });
+    calendar.render();
+  });
   
     document.getElementById("readout1").innerHTML= events
     // document.getElementById("readout2").innerHTML= events
