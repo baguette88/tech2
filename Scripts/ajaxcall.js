@@ -9,7 +9,7 @@ function getEvents() {
         "async": true,
         "crossOrigin": true,
         "crossDomain": true,
-        "url": "https://cors-anywhere.herokuapp.com/https://api.bizzabo.com/api/events",
+        "url": "https://cors-anywhere.herokuapp.com/https://api.bizzabo.com/api/events",//added route before API
         "method": "GET",
         "Content-type": "application/x-www-form-urlencoded",
         "headers": {
@@ -23,7 +23,7 @@ function getEvents() {
     }
 
 $.ajax({
-    "url": "https://cors-anywhere.herokuapp.com/https://api.bizzabo.com/api/events",
+    "url": "https://cors-anywhere.herokuapp.com/https://api.bizzabo.com/api/events", //added route before API
     "type": "GET",
     "xhrFields" : {
         "accept": "application/vnd.bizzabo.v2.0+json",
@@ -51,7 +51,6 @@ $.ajax({
 }
 
 
-
   /////////////////////////////////////////////////////////////////////////////////////////////////
     let eventArr = [];
     let data = {eventArr};
@@ -64,7 +63,7 @@ xhr.addEventListener("readystatechange", function () {
     let events =this.responseText
     
 
-
+//CONSTRUCTOR
     class eventItem {
       constructor(start, end, url, photo, title) {
         this.start = start,
@@ -79,17 +78,16 @@ xhr.addEventListener("readystatechange", function () {
     }
     //LOOP  DATA INTO THE ARRAY BY DATE?
     
-    eventArr.push(events) // eventArr array contains JSON data
+    // eventArr.push(events) //REPALCE THIS WITH FUNCTION BELOW PROPERLY LOOPING THROUGH ARRAY
 
+    //OBJECT CREATION
     //ERROR HERE UNDEFINED OBJECT ******
-    Object.keys(events.content).forEach(function (key) {
-      eventArr.push(key, events.content[key]);
-    });
-  
-// global variable to hold the new eventItems
 
-  
-//   //Loop through the array of objects and map the applicable variables
+   // ******
+
+   // ******
+
+  //Loop through array of objects, map variables
   for (i = 1; i < eventArr.length; i++) {
     
     let events = new eventItem(eventArr[i].startDate, eventArr[i].endDate, eventArr[i].websiteUrl, eventArr[i].coverPhotoUrl, eventArr[i].name, eventArr[i].backgroundColor, eventArr[i].textColor, eventArr[i].display)
@@ -101,8 +99,6 @@ xhr.addEventListener("readystatechange", function () {
     console.log("eventArr array contains JSON object")
 // console.log(events)
 
-
-
 //FullCalendar Plugin Mechanics
 $(document).ready(function(){
  $(function()
@@ -110,9 +106,19 @@ $(document).ready(function(){
    console.log("Calendar Plugin Activated!")
   //  alert('Calendar Plugin Activated!');
   // console.log(events)
-  console.log("SUCCESS!!!!!" + events.content(1).coverPhotoUrl)
- })
 
+  //****** LOGGING SPECIC ITEMS
+  // console.log("SUCCESS!!!!!" + events)
+
+  // Object.keys(events.content).forEach(function (key) {
+  //   eventArr.push(key, events.content[key]);
+  // });
+
+
+  console.log("SUCCESS!!!!!" + events[4])
+  console.log("Full Readout*****   "+ events)
+  //******
+ })
 
   // dayClick: function() {                     // CREATE AN ALERT
   //   alert('a day has been clicked!');
@@ -127,10 +133,6 @@ $(document).ready(function(){
   //to clear calendar
 }
 )
-
-
-//  CONSTRUCTOR FOR PLUGIN
- 
   
   $(document).ready(function() {
 
