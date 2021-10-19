@@ -148,9 +148,6 @@ $(document).ready(function(){
   // });
 
 
-  // //REDUNDANT CALL AT 132?
-  // // Call FullCalendar
-  // document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('calendar');
   
     var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -161,6 +158,7 @@ $(document).ready(function(){
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,timeGridDay'
       },
+      //TOGGLE THROUGH MONTH/WEEK/DAY
     
       events: eventArr,
   
