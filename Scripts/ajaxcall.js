@@ -50,8 +50,15 @@ function getEvents() {
 
   ///////////////////////
     let eventArr = [];
+    
     let data = eventArr;
-  
+        let events = data
+
+
+      //  **** BUG IS HERE *****
+    // Object.keys(events.content).forEach(function (key) {
+    //   eventArr.push(key, events.content[key]);
+    // });
 var xhr = new XMLHttpRequest();
 // xhr.withCredentials = true;  // REMOVING THIS LINE ELIMINATED CORS ERROR COMBINED W PROXY USE IN URL
 xhr.addEventListener("readystatechange", function () {
@@ -61,13 +68,14 @@ xhr.addEventListener("readystatechange", function () {
     //******************************************************************
     //**THIS IS WHERE JSON IS GETTING MASHED IN IMPROPERLY */
     let events =this.responseText
+    let data = eventArr;
      //******************************************************************
-
+    //  Object.keys(events.content).forEach(function (key) {
+    //   eventArr.push(key, events.content[key]);
+    ;
        //******************************************************************
 //NEED TO PROPERLY LOOP INTO ARRAY
-    // Object.keys(events.content).forEach(function (key) {
-    //   eventArr.push(key, events.content[key]);
-    // });
+  
     // //******************************************************************
 
 //CONSTRUCTOR eventItem
@@ -168,7 +176,7 @@ $(document).ready(function(){
   
     let calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
-      initialDate: '2021-02-17',
+      initialDate: '2021-10-22',
       headerToolbar: {
         left: 'prev,next today',
         center: 'title',
