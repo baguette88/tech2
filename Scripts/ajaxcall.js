@@ -60,11 +60,14 @@ var xhr = new XMLHttpRequest();
 
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
+    //**THIS IS WHERE JSON IS GETTING MASHED IN IMPROPERLY */
+    let events =this.responseText
+    
 
-    //THIS IS WHERE I AM 
-    let events =this.responseText.keys(events.content).forEach(function (key) {
-      eventArr.push(key, events.content[key]);
-    });
+//NEED TO PROPERLY LOOP INTO ARRAY
+    // Object.keys(events.content).forEach(function (key) {
+    //   eventArr.push(key, events.content[key]);
+    // });
   
 
 
