@@ -15,7 +15,7 @@ if (hourNow > 18) {
 
 document.getElementById('lblGreetings').innerHTML =
 '<b>' + greeting + '</b> and Welcome to Bizzabo';
-console.log(greeting+", Jeff. I checked time and greeted user")
 
+console.log(greeting+", Jeff. I checked time and greeted user")
 console.log(today)
 document.getElementById("localTime").innerHTML= today
