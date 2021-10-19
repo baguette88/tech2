@@ -96,8 +96,8 @@ $(document).ready(function(){
  {
    console.log("Calendar Plugin Activated!")
    alert('Calendar Plugin Activated!');
-  console.log(events)
-  console.log("SUCCESS!!!!!" + data.content[0].coverPhotoUrl)
+  // console.log(events)
+  console.log("SUCCESS!!!!!" + events.content[0].coverPhotoUrl)
  })
 
 
