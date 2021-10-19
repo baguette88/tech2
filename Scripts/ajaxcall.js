@@ -120,6 +120,7 @@ $(document).ready(function(){
 
 
   console.log("SUCCESS!!!!!" + events[4])
+  console.log("SUCCESS!!!!!" + eventArr[4])
   console.log("Full Readout*****   "+ events)
   //******
  })
