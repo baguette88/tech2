@@ -1,8 +1,8 @@
-$(document).ready(function () {
-    // getEvents()
-})
+// $(document).ready(function () {
+//     // getEvents()
+// })
 
-console.log("script check1")
+console.log("AJAX script")
 
 function getEvents() {
     let settings = {
@@ -56,6 +56,7 @@ var xhr = new XMLHttpRequest();
 // xhr.withCredentials = true;  // REMOVING THIS LINE ELIMINATED CORS ERROR COMBINED W PROXY USE IN URL
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
+    console.log("JSON RECEIEVED:      "+this.responseText)
     //******************************************************************
     //**THIS IS WHERE JSON IS GETTING MASHED IN IMPROPERLY */
     let events =this.responseText
@@ -68,7 +69,7 @@ xhr.addEventListener("readystatechange", function () {
     // });
     //******************************************************************
 
-//CONSTRUCTOR
+//CONSTRUCTOR eventItem
     class eventItem {
       constructor(start, end, url, photo, title) {
         this.start = start,
@@ -99,7 +100,7 @@ xhr.addEventListener("readystatechange", function () {
 $(document).ready(function(){
  $(function()
  {
-   console.log("Calendar Plugin Activated!")
+   console.log("Calendar Plugin is already activated at 103 of AJAX")
 
   console.log("SUCCESS!!!!!" + events[4])
   console.log("SUCCESS!!!!!" + eventArr[4])
@@ -148,9 +149,9 @@ $(document).ready(function(){
   // });
 
 
-    var calendarEl = document.getElementById('calendar');
+    let calendarEl = document.getElementById('calendar');
   
-    var calendar = new FullCalendar.Calendar(calendarEl, {
+    let calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
       initialDate: '2021-02-17',
       headerToolbar: {
@@ -160,14 +161,17 @@ $(document).ready(function(){
       },
       //TOGGLE THROUGH MONTH/WEEK/DAY
     
-      events: eventArr,
+      events: data,
+      //changed from events: eventArr
   
   
     });
     calendar.render();
+    //Plugin Calendar is rendered
   });
   
     document.getElementById("readout1").innerHTML= events
+    // Second on screen readout div below for dev testing
     // document.getElementById("readout2").innerHTML= events
 
 
