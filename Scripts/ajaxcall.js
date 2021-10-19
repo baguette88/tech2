@@ -63,6 +63,13 @@ xhr.addEventListener("readystatechange", function () {
     let events =this.responseText
     
 
+
+    Object.keys(events.content).forEach(function (key) {
+      eventArr.push(key, events.content[key]);
+    });
+  
+
+
 //CONSTRUCTOR
     class eventItem {
       constructor(start, end, url, photo, title) {
@@ -88,10 +95,6 @@ xhr.addEventListener("readystatechange", function () {
    // ******
 
   //Loop through array of objects, map variables
-
-  Object.keys(events.content).forEach(function (key) {
-    eventArr.push(key, events.content[key]);
-  });
 
 
   for (i = 1; i < eventArr.length; i++) {
