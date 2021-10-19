@@ -64,14 +64,27 @@ xhr.addEventListener("readystatechange", function () {
     let events =this.responseText
     
 
+
+    class eventItem {
+      constructor(start, end, url, photo, title) {
+        this.start = start,
+        this.end = end,
+        this.url = url,
+        this.photo = photo
+        this.title = title
+        this.backgroundColor = "indianred"
+        this.textColor = "white"
+        this.display = 'block'
+      }
+    }
     //LOOP  DATA INTO THE ARRAY BY DATE?
     
     eventArr.push(events) // eventArr array contains JSON data
 
     //ERROR HERE UNDEFINED OBJECT ******
-    // Object.keys(events.content).forEach(function (key) {
-    //   eventArr.push(key, events.content[key]);
-    // });
+    Object.keys(events.content).forEach(function (key) {
+      eventArr.push(key, events.content[key]);
+    });
   
 // global variable to hold the new eventItems
 
@@ -117,18 +130,7 @@ $(document).ready(function(){
 
 
 //  CONSTRUCTOR FOR PLUGIN
-  class eventItem {
-    constructor(start, end, url, photo, title) {
-      this.start = start,
-      this.end = end,
-      this.url = url,
-      this.photo = photo
-      this.title = title
-      this.backgroundColor = "indianred"
-      this.textColor = "white"
-      this.display = 'block'
-    }
-  }
+ 
   
   $(document).ready(function() {
 
