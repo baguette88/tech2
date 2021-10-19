@@ -4,10 +4,10 @@ let hourNow = today.getHours();
 let greeting;
 
 if (hourNow > 18) {
-    greeting = "<b>Good Evening, User<b>";
+    greeting = "<b>Good Evening<b>";
     // add name as template literal
 }else if (hourNow > 12) {
-    greeting = "<b>Good Afternoon</b>";
+    greeting = "<b id=grt>Good Afternoon</b>";
 } else if (hourNow > 0) {
     greeting = '<b>Good Morning</b>';
 } else { greeting = 'Welcome (greeting.js error occured)';
@@ -15,7 +15,7 @@ if (hourNow > 18) {
 
 document.getElementById('lblGreetings').innerHTML =
 '<b>' + greeting + '</b> and Welcome to Bizzabo';
-console.log('checked time and greeted user')
+console.log(greeting+", Jeff. I checked time and greeted user")
 
 console.log(today)
 document.getElementById("localTime").innerHTML= today

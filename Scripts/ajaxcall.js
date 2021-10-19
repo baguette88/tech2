@@ -50,47 +50,61 @@ $.ajax({
 });
 }
 
+
+
   /////////////////////////////////////////////////////////////////////////////////////////////////
     let eventArr = [];
-    
     let data = {eventArr};
-
-    // events = {[   data   ]}
-    //  console.log("object obtained" + data.eventArr)
-    
-
+  
 var xhr = new XMLHttpRequest();
-// xhr.withCredentials = true;  // REMOVING THIS LINE ELIMINATES CORS ERROR COMBINED W PROXY USE
+// xhr.withCredentials = true;  // REMOVING THIS LINE ELIMINATED CORS ERROR COMBINED W PROXY USE IN URL
 
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
-   
-    // eventArr.push(this.responseText);
     let events =this.responseText
-
-
     
+
+    //LOOP  DATA INTO THE ARRAY BY DATE?
+    
+    eventArr.push(events) // eventArr array contains JSON data
+
+    //ERROR HERE UNDEFINED OBJECT ******
+    // Object.keys(events.content).forEach(function (key) {
+    //   eventArr.push(key, events.content[key]);
+    // });
+  
+// global variable to hold the new eventItems
+
+  
+//   //Loop through the array of objects and map the applicable variables
+  for (i = 1; i < eventArr.length; i++) {
+    
+    let events = new eventItem(eventArr[i].startDate, eventArr[i].endDate, eventArr[i].websiteUrl, eventArr[i].coverPhotoUrl, eventArr[i].name, eventArr[i].backgroundColor, eventArr[i].textColor, eventArr[i].display)
+  
+    startandend.push(events)
+  }
+  console.log("NEW ARRAY "+events)
+
+    console.log("eventArr array contains JSON object")
+// console.log(events)
+
+
+
 //FullCalendar Plugin Mechanics
 $(document).ready(function(){
-// $(function()
-// {
+ $(function()
+ {
+   console.log("Calendar Plugin Activated!")
+   alert('Calendar Plugin Activated!');
+  console.log(events)
+ })
 
-// })
 
-  // $('#calendar').fullCalendar
-  // editable: trueweekMode: 'liquid'
-  // url: #
-  // events: [
-
-  // ]
-
-  // dayClick: function() {
+  // dayClick: function() {                     // CREATE AN ALERT
   //   alert('a day has been clicked!');
   // }
 
-  // $('#calendar').fullCalendar('next');
-  // // toggles next day or week
-
+  // $('#calendar').fullCalendar('next');   //toggles next day or week
 
   // calendar.render();
   //render the calendar
@@ -101,63 +115,47 @@ $(document).ready(function(){
 )
 
 
+//  CONSTRUCTOR FOR PLUGIN
+  class eventItem {
+    constructor(start, end, url, photo, title) {
+      this.start = start,
+      this.end = end,
+      this.url = url,
+      this.photo = photo
+      this.title = title
+      this.backgroundColor = "indianred"
+      this.textColor = "white"
+      this.display = 'block'
+    }
+  }
+  
 
-// // Iterate through each row? 
-// Object.keys(events.content).forEach(function (key) {
-//     eventArr.push(key, events.content[key]);
-//   });
+  //REDUNDANT CALL AT 132?
+  // Call FullCalendar
+  document.addEventListener('DOMContentLoaded', function () {
+    var calendarEl = document.getElementById('calendar');
   
-//   //Create a constructor to load up the event details to be used in the plugin
-//   class eventItem {
-//     constructor(start, end, url, photo, title) {
-//       this.start = start,
-//       this.end = end,
-//       this.url = url,
-//       this.photo = photo
-//       this.title = title
-//       this.backgroundColor = "indianred"
-//       this.textColor = "white"
-//       this.display = 'block'
-//     }
-//   }
-  
-// global variable to hold the new eventItems
-//   let eventArr = []
-  
-//   //Loop through the array of objects and map the applicable variables
-//   for (i = 1; i < eventArr.length; i++) {
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      initialDate: '2021-02-17',
+      headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+      },
     
-//     let events = new eventItem(eventArr[i].startDate, eventArr[i].endDate, eventArr[i].websiteUrl, eventArr[i].coverPhotoUrl, eventArr[i].name, eventArr[i].backgroundColor, eventArr[i].textColor, eventArr[i].display)
-  
-//     startandend.push(events)
-//   }
+      events: eventArr,
   
   
-//   //Call the third party FullCalendar to create a calendar with events
-//   document.addEventListener('DOMContentLoaded', function () {
-//     var calendarEl = document.getElementById('calendar');
-  
-//     var calendar = new FullCalendar.Calendar(calendarEl, {
-//       initialView: 'dayGridMonth',
-//       initialDate: '2021-02-17',
-//       headerToolbar: {
-//         left: 'prev,next today',
-//         center: 'title',
-//         right: 'dayGridMonth,timeGridWeek,timeGridDay'
-//       },
-//       //Insert the array of objects created before into the events property to get the corresponding key-value pairs
-//       events: eventArr,
-  
-  
-//     });
-//     calendar.render();
-//   });
+    });
+    calendar.render();
+  });
 
 
-    console.log(events)                        // eventArr is the data
+  
     document.getElementById("readout1").innerHTML= events
     // document.getElementById("readout2").innerHTML= events
-////RETRIEVING SPECIFIC DATA
+
 
   }
 });

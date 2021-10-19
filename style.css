@@ -28,6 +28,9 @@ border-radius: 25%;
     display: inline-block;
     padding: 2px 4px;
   }
+  #grt {
+    color: green
+  }
 
 .fc-header-toolbar fc-toolbar {
   color:red;
