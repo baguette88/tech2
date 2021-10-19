@@ -95,7 +95,7 @@ $(document).ready(function(){
  $(function()
  {
    console.log("Calendar Plugin Activated!")
-   alert('Calendar Plugin Activated!');
+  //  alert('Calendar Plugin Activated!');
   // console.log(events)
   console.log("SUCCESS!!!!!" + events.content(1).coverPhotoUrl)
  })
