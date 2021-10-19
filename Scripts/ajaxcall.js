@@ -83,7 +83,7 @@ xhr.addEventListener("readystatechange", function () {
   
     startandend.push(events)
   }
-  console.log("NEW ARRAY "+events)
+  // console.log("NEW ARRAY "+events)
 
     console.log("eventArr array contains JSON object")
 // console.log(events)
@@ -97,7 +97,7 @@ $(document).ready(function(){
    console.log("Calendar Plugin Activated!")
    alert('Calendar Plugin Activated!');
   // console.log(events)
-  console.log("SUCCESS!!!!!" + events.content[0].coverPhotoUrl)
+  console.log("SUCCESS!!!!!" + events.content(1).coverPhotoUrl)
  })
 
 
