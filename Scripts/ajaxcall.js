@@ -53,7 +53,7 @@ function getEvents() {
     let eventArr = [];
     // data.push
     console.log(startandend)
-    let data = eventArr; //scoping issue w repeated variable
+    let data  //scoping issue w repeated variable
         // let events = data
     
 var xhr = new XMLHttpRequest();
