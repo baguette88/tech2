@@ -60,7 +60,7 @@ xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
     console.log("JSON RECEIEVED:      "+this.responseText)
     console.log("JSON RECEIEVED:      "+this.responseXML)
-    console.log(typeof this.responseText)
+    console.log(typeof this.responseXML)
     let events = this.responseXML
     // console.log(events.content)
   }
