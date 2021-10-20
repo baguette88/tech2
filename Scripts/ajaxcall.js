@@ -73,9 +73,12 @@ xhr.addEventListener("readystatechange", function () {
     console.log("outside of the xhr function events is:  "+typeof events) //currently undefiend
     console.log(events) //currently undefiend
     console.log(events.content)
-    events= events.content
-    let eventsArr = []
-eventsArr.push(events)
+     //******************************************************************
+
+     //******************************************************************
+    let eventArr = []
+    events.content.push(eventArr)
+    console.log(eventArr)
 
 
 
@@ -85,9 +88,9 @@ eventsArr.push(events)
     // let data = eventArr;
      // //******************************************************************
      //******************************************************************
-    //  Object.keys(events.content).forEach(function (key) {
-    //   eventArr.push(key, events.content[key]);
-    //  })
+     Object.keys(events.content).forEach(function (key) {
+      eventArr.push(key, events.content[key]);
+     })
   
   
 //CONSTRUCTOR eventItem
