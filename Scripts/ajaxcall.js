@@ -28,7 +28,7 @@ function getEvents() {
               "accept": "application/vnd.bizzabo.v2.0+json",
              "authorization": "bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
               "Access-Control-Allow-Origin": "https://techjbb.netlify.app/",
-             "Access-Control-Allow-Origin": "*",
+             "Access-Control-Allow-Origin": "http://127.0.0.1:5500/",
              "Access-Control-Allow-Headers": "*",
              "Access-Control-Allow-Methods": POST,GET,PUT,DELETE,
               "Access-Control-Allow-Credentials": "true",
@@ -38,19 +38,20 @@ function getEvents() {
          "headers": {
               "accept": "application/vnd.bizzabo.v2.0+json",
              "authorization": "Bearer" , 
-              "Access-Control-Allow-Origin": "*",
+              "Access-Control-Allow-Origin": "http://127.0.0.1:5500/",
              "Access-Control-Allow-Origin": "https://techjbb.netlify.app/",
              "Access-Control-Allow-Credentials": "true",
              "Access-Control-Allow-Headers": Authorization, Lang,
              "Access-Control-Allow-Methods": POST,GET,PUT,DELETE,
           }
       }).done(function (data) {
+        console.log("XXX"+data)
       });
   }
 
   ///////////////////////
     let eventArr = [];
-    
+    // data.push
     let data = eventArr;
         let events = data
 
@@ -68,10 +69,11 @@ xhr.addEventListener("readystatechange", function () {
     //******************************************************************
     //**THIS IS WHERE JSON IS GETTING MASHED IN IMPROPERLY */
     let events =this.responseText
+    
     let data = eventArr;
      //******************************************************************
-    //  Object.keys(events.content).forEach(function (key) {
-    //   eventArr.push(key, events.content[key]);
+     Object.keys(events.content).forEach(function (key) {
+      eventArr.push(key, events.content[key]);
     ;
        //******************************************************************
 //NEED TO PROPERLY LOOP INTO ARRAY
