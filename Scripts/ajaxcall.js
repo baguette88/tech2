@@ -1,5 +1,6 @@
 $(document).ready(function(){
   let startandend = []
+  let events
 function getEvents() {
     let settings = {
         "async": true,
@@ -41,6 +42,9 @@ function getEvents() {
              "Access-Control-Allow-Methods": POST,GET,PUT,DELETE,
           }
       }).done(function (data) {
+// DATA CALL HERE
+let tester = data
+console.log(tester)
       });
   }
 
@@ -48,23 +52,27 @@ function getEvents() {
     let eventArr = [];
     // data.push
     let data = eventArr;
-        let events = data
+        // let events = data
     
 var xhr = new XMLHttpRequest();
 // xhr.withCredentials = true;  // REMOVING THIS LINE ELIMINATED CORS ERROR COMBINED W PROXY USE IN URL
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
-    console.log("JSON RECEIEVED:      "+this.responseText)
+    events = this.response
+    console.log("JSON RECEIEVED:      "+this.responseXML)
+    console.log(typeof this.responseXML)
+    console.log(events)
   }
     //******************************************************************
     //**THIS IS WHERE JSON IS GETTING MASHED IN IMPROPERLY */
-    let events =this.responseText
-    console.log(typeof(events))
+   
+    //THIS IS A STRING, CONVERT TO 
+    console.log(typeof events)
     let data = eventArr;
      //******************************************************************
-     Object.keys(events.content).forEach(function (key) {
-      eventArr.push(key, events.content[key]);
-     })
+    //  Object.keys(events.content).forEach(function (key) {
+    //   eventArr.push(key, events.content[key]);
+    //  })
     //    //******************************************************************
 //NEED TO PROPERLY LOOP INTO ARRAY
   
@@ -88,7 +96,7 @@ xhr.addEventListener("readystatechange", function () {
   //Loop through array of objects, map variables
   for (i = 1; i < eventArr.length; i++) {
     
-    let events = new eventItem(eventArr[i].startDate, eventArr[i].endDate, eventArr[i].websiteUrl, eventArr[i].coverPhotoUrl, eventArr[i].name, eventArr[i].backgroundColor, eventArr[i].textColor, eventArr[i].display)
+    events = new eventItem(eventArr[i].startDate, eventArr[i].endDate, eventArr[i].websiteUrl, eventArr[i].coverPhotoUrl, eventArr[i].name, eventArr[i].backgroundColor, eventArr[i].textColor, eventArr[i].display)
   
     startandend.push(events)
   }
