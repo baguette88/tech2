@@ -1,6 +1,7 @@
 
+let startandend
 $(document).ready(function(){
-  let startandend = []
+ startandend = []
   let events
 function getEvents() {
     let settings = {
@@ -109,7 +110,7 @@ xhr.addEventListener("readystatechange", function () {
     }
   }
   
-  let startandend
+  
   //Loop through array of objects, map variables
   for (i = 1; i < eventArr.length; i++) {
     let events = new eventItem(eventArr[i].startDate, eventArr[i].endDate, eventArr[i].websiteUrl, eventArr[i].coverPhotoUrl, eventArr[i].name, eventArr[i].backgroundColor, eventArr[i].textColor, eventArr[i].display)
@@ -121,25 +122,6 @@ xhr.addEventListener("readystatechange", function () {
 
 // let startandend
  
-document.addEventListener('DOMContentLoaded', function() {
-  console.log("render function index")
-  var calendarEl = document.getElementById('calendar');
-  var calendar = new FullCalendar.Calendar(calendarEl, {
-    initialView: 'dayGridMonth',
-initialDate: '2021-02-17',
-headerToolbar: {
-left: 'prev,next today',
-center: 'title',
-right: 'dayGridMonth,timeGridWeek,timeGridDay'
-},
-//*******Insert the array of objects created before into the events property to get the corresponding key-value pairs
-events: events,
-  });
-  // calendar.addEvent()
-  calendar.render();
-  console.log("calendar rendered")
-  // console.log(events.content) SHOWING UNDEFINED?!
-});
 
 })
 xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://api.bizzabo.com/api/events/");
