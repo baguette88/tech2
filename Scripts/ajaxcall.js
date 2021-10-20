@@ -58,7 +58,7 @@ var xhr = new XMLHttpRequest();
 // xhr.withCredentials = true;  // REMOVING THIS LINE ELIMINATED CORS ERROR COMBINED W PROXY USE IN URL
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
-    events = this.response
+    events = this.responseXML
     console.log("JSON RECEIEVED:      "+this.responseXML)
     console.log(typeof this.responseXML)
     console.log(events)
