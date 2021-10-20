@@ -78,8 +78,10 @@ xhr.addEventListener("readystatechange", function () {
      //******************************************************************
     let eventArr = []
     // events.content.push(eventArr)
-    console.log(eventArr)
-
+    console.log(eventArr[0])
+    console.log(eventArr[1])
+    console.log(eventArr[2])
+    console.log(eventArr[3])
 
 
 
