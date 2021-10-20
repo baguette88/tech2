@@ -72,9 +72,9 @@ xhr.addEventListener("readystatechange", function () {
     
     let data = eventArr;
      //******************************************************************
-     Object.keys(events.content).forEach(function (key) {
-      eventArr.push(key, events.content[key]);
-    ;
+    //  Object.keys(events.content).forEach(function (key) {
+    //   eventArr.push(key, events.content[key]);
+    // ;
        //******************************************************************
 //NEED TO PROPERLY LOOP INTO ARRAY
   
@@ -127,7 +127,7 @@ $(document).ready(function(){
  {
   console.log("Full Readout*****   "+ events)
   //******
-  console.log("YYY"+events.links)
+  console.log("YYY"+events.content)
  })
 
   // dayClick: function() {                     // CREATE AN ALERT
