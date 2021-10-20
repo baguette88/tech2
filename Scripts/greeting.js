@@ -1,4 +1,3 @@
-console.log('script start...')
 let today = new Date();  
 let hourNow = today.getHours();
 let greeting;
@@ -12,10 +11,5 @@ if (hourNow > 18) {
     greeting = '<b>Good Morning</b>';
 } else { greeting = 'Welcome (greeting.js error occured)';
 }
-
-document.getElementById('lblGreetings').innerHTML =
-'<b>' + greeting + '</b> and Welcome to Bizzabo';
-
-console.log(greeting+", Jeff. I checked time and greeted user")
-console.log(today)
+document.getElementById('lblGreetings').innerHTML = '<b>' + greeting + '</b> and Welcome to Bizzabo';
 document.getElementById("localTime").innerHTML= today

@@ -43,26 +43,26 @@ function getEvents() {
           }
       }).done(function (data) {
 // DATA CALL HERE
-let tester = data
-console.log(tester)
+// let tester = data
+// console.log(tester)
       });
   }
 
   ///////////////////////
     let eventArr = [];
     // data.push
-    let data = eventArr;
+    let data = eventArr; //scoping issue w repeated variable
         // let events = data
     
 var xhr = new XMLHttpRequest();
 // xhr.withCredentials = true;  // REMOVING THIS LINE ELIMINATED CORS ERROR COMBINED W PROXY USE IN URL
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
-    console.log("JSON RECEIEVED:      "+this.responseText)
-    console.log("JSON RECEIEVED:      "+this.responseXML)
-    console.log(typeof this.responseXML)
+    console.log("this.responseText Reads:      "+this.responseText)
+    console.log("this.responseXML Reads:      "+this.responseXML)
+    console.log("responseXML is a  "+ typeof this.responseXML)
     let events = this.responseXML
-    // console.log(events.content)
+    console.log("Events is a  "+ typeof events)
   }
 
     console.log(typeof events)
