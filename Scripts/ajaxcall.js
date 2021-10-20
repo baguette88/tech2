@@ -58,10 +58,11 @@ var xhr = new XMLHttpRequest();
 // xhr.withCredentials = true;  // REMOVING THIS LINE ELIMINATED CORS ERROR COMBINED W PROXY USE IN URL
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
-    events = this.responseXML
+    console.log("JSON RECEIEVED:      "+this.responseText)
     console.log("JSON RECEIEVED:      "+this.responseXML)
-    console.log(typeof this.responseXML)
-    console.log(events)
+    console.log(typeof this.responseText)
+    let events = this.responseXML
+    // console.log(events.content)
   }
     //******************************************************************
     //**THIS IS WHERE JSON IS GETTING MASHED IN IMPROPERLY */
