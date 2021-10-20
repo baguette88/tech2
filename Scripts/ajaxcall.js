@@ -35,8 +35,9 @@ function getEvents() {
          "headers": {
               "accept": "application/vnd.bizzabo.v2.0+json",
              "authorization": "Bearer" , 
-              "Access-Control-Allow-Origin": "http://127.0.0.1:5500/",
              "Access-Control-Allow-Origin": "https://techjbb.netlify.app/",
+              "Access-Control-Allow-Origin": "http://127.0.0.1:5500/",
+            //  "Access-Control-Allow-Origin": "https://techjbb.netlify.app/",
              "Access-Control-Allow-Credentials": "true",
              "Access-Control-Allow-Headers": Authorization, Lang,
              "Access-Control-Allow-Methods": POST,GET,PUT,DELETE,
@@ -51,6 +52,7 @@ function getEvents() {
   ///////////////////////
     let eventArr = [];
     // data.push
+    console.log(startandend)
     let data = eventArr; //scoping issue w repeated variable
         // let events = data
     
@@ -58,22 +60,36 @@ var xhr = new XMLHttpRequest();
 // xhr.withCredentials = true;  // REMOVING THIS LINE ELIMINATED CORS ERROR COMBINED W PROXY USE IN URL
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
-    console.log("this.responseText Reads:      "+this.responseText)
-    console.log("this.responseXML Reads:      "+this.responseXML)
-    console.log("responseXML is a  "+ typeof this.responseXML)
-    let events = this.responseXML
-    console.log("Events is a  "+ typeof events)
-  }
+    events = JSON.parse(this.responseText);
+// alert(obj.length);
+    // console.log("this.responseText Reads:      "+this.responseText)
+    // console.log("responseText is a  "+ typeof this.responseXML)
+    // // console.log("this.responseXML Reads:      "+this.responseXML)
+    // console.log("responseXML is a  "+ typeof this.responseXML)
+    // let events = this.responseXML
+    console.log("Inside function, Events is a  "+ typeof events)
+  
 
-    console.log(typeof events)
-    let data = eventArr;
+    console.log("outside of the xhr function events is:  "+typeof events) //currently undefiend
+    console.log(events) //currently undefiend
+    console.log(events.content)
+    events= events.content
+    let eventsArr = []
+eventsArr.push(events)
+
+
+
+
+
+
+    // let data = eventArr;
      // //******************************************************************
      //******************************************************************
     //  Object.keys(events.content).forEach(function (key) {
     //   eventArr.push(key, events.content[key]);
     //  })
   
-
+  
 //CONSTRUCTOR eventItem
     class eventItem {
       constructor(start, end, url, photo, title) {
@@ -87,14 +103,17 @@ xhr.addEventListener("readystatechange", function () {
         this.photo = photo
       }
     }
+  }
+  
   //Loop through array of objects, map variables
   for (i = 1; i < eventArr.length; i++) {
     events = new eventItem(eventArr[i].startDate, eventArr[i].endDate, eventArr[i].websiteUrl, eventArr[i].coverPhotoUrl, eventArr[i].name, eventArr[i].backgroundColor, eventArr[i].textColor, eventArr[i].display)
     startandend.push(events)
   }
-})
+  // console.log(events.content)
+
 //FullCalendar Plugin Mechanics
-$(document).ready(function(){
+
     let calendarEl = document.getElementById('calendar');
     let calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
@@ -106,18 +125,18 @@ $(document).ready(function(){
       },
       //TOGGLE THROUGH MONTH/WEEK/DAY
     
-      events: eventArr,
+      events: startandend, //CHANGE THESE 
       //changed from events: eventArr
     });
     calendar.render();
     //Plugin Calendar is rendered
-  });
+  }); // doc.ready ends
 
 xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://api.bizzabo.com/api/events/");
 xhr.setRequestHeader("accept", "application/vnd.bizzabo.v2.0+json");
 xhr.setRequestHeader("authorization", "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2");
 xhr.send(data);
-
+// console.log("123: "+data)
 const requestCurrent = () => {
   $.ajax({
     url: "https://cors-anywhere.herokuapp.com/https://api.bizzabo.com/api/events",
