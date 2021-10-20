@@ -70,9 +70,9 @@ xhr.addEventListener("readystatechange", function () {
     console.log(typeof events)
     let data = eventArr;
      //******************************************************************
-    //  Object.keys(events.content).forEach(function (key) {
-    //   eventArr.push(key, events.content[key]);
-    //  })
+     Object.keys(events.content).forEach(function (key) {
+      eventArr.push(key, events.content[key]);
+     })
     //    //******************************************************************
 //NEED TO PROPERLY LOOP INTO ARRAY
   
