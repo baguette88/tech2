@@ -42,7 +42,7 @@ crossorigin="anonymous"></script>
   
       </div>
        <img src="bizzabo.png" alt="Image or logo of bizzabo">
-      Your Schedule: UserName
+    
     <div id='calendar'></div>
       
     </div> -->
@@ -111,11 +111,12 @@ crossorigin="anonymous"></script>
   right: 'dayGridMonth,timeGridWeek,timeGridDay'
   },
   //*******Insert the array of objects created before into the events property to get the corresponding key-value pairs
-  // events, eventArr 
+  startandend, events
     });
+    calendar.addEvent()
     calendar.render();
     console.log("calendar rendered")
-    console.log(events.content)
+    // console.log(events.content) SHOWING UNDEFINED?!
   });
   
       </script> 
