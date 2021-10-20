@@ -37,7 +37,7 @@ function getEvents() {
           "crossDomain": "true",
          "headers": {
               "accept": "application/vnd.bizzabo.v2.0+json",
-             "authorization": "Bearer" ,
+             "authorization": "Bearer" , 
               "Access-Control-Allow-Origin": "http://127.0.0.1:5500/",
              "Access-Control-Allow-Origin": "https://techjbb.netlify.app/",
              "Access-Control-Allow-Credentials": "true",
@@ -215,7 +215,7 @@ const requestCurrent = () => {
     type: "GET",
     headers: {
       "content-type": "application/vnd.bizzabo.v2.0+json",
-      "authorization": "Bearer",      
+      "authorization": "Bearer, b2f9b657-d8fd-4c34-a28b-eba13cab25c2"      
     },
     data: {
     }
