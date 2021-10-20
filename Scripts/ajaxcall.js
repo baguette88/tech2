@@ -125,12 +125,9 @@ xhr.addEventListener("readystatechange", function () {
 $(document).ready(function(){
  $(function()
  {
-   console.log("Calendar Plugin is already activated at 103 of AJAX")
-
-  console.log("SUCCESS!!!!!" + events[4])
-  console.log("SUCCESS!!!!!" + eventArr[4])
   console.log("Full Readout*****   "+ events)
   //******
+  console.log("YYY"+events.links)
  })
 
   // dayClick: function() {                     // CREATE AN ALERT
