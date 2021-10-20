@@ -28,7 +28,7 @@ function getEvents() {
               "accept": "application/vnd.bizzabo.v2.0+json",
              "authorization": "bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
               "Access-Control-Allow-Origin": "https://techjbb.netlify.app/",
-             "Access-Control-Allow-Origin": "http://127.0.0.1:5500/",
+             "Access-Control-Allow-Origin": "*",
              "Access-Control-Allow-Headers": "*",
              "Access-Control-Allow-Methods": POST,GET,PUT,DELETE,
               "Access-Control-Allow-Credentials": "true",
@@ -38,7 +38,7 @@ function getEvents() {
          "headers": {
               "accept": "application/vnd.bizzabo.v2.0+json",
              "authorization": "Bearer" , 
-              "Access-Control-Allow-Origin": "http://127.0.0.1:5500/",
+              "Access-Control-Allow-Origin": "*",
              "Access-Control-Allow-Origin": "https://techjbb.netlify.app/",
              "Access-Control-Allow-Credentials": "true",
              "Access-Control-Allow-Headers": Authorization, Lang,
@@ -203,7 +203,7 @@ $(document).ready(function(){
 
 xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://api.bizzabo.com/api/events/");
 xhr.setRequestHeader("accept", "application/vnd.bizzabo.v2.0+json");
-xhr.setRequestHeader("authorization", "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2" );
+xhr.setRequestHeader("authorization", "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2");
 
 xhr.send(data);
 
