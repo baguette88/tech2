@@ -1,9 +1,3 @@
-// $(document).ready(function () {
-//     // getEvents()
-// })
-
-console.log("AJAX script")
-
 function getEvents() {
     let settings = {
         "async": true,
@@ -20,7 +14,7 @@ function getEvents() {
             "Access-Control-Allow-Methods": POST,GET,PUT,DELETE,
         },
         "data": "{}"
-  }
+  };
       $.ajax({
           "url": "https://cors-anywhere.herokuapp.com/https://api.bizzabo.com/api/events", //added route before API
           "type": "GET",
@@ -45,7 +39,6 @@ function getEvents() {
              "Access-Control-Allow-Methods": POST,GET,PUT,DELETE,
           }
       }).done(function (data) {
-        console.log("XXX"+data)
       });
   }
 
@@ -54,12 +47,7 @@ function getEvents() {
     // data.push
     let data = eventArr;
         let events = data
-
-
-      //  **** BUG IS HERE *****
-    // Object.keys(events.content).forEach(function (key) {
-    //   eventArr.push(key, events.content[key]);
-    // });
+    
 var xhr = new XMLHttpRequest();
 // xhr.withCredentials = true;  // REMOVING THIS LINE ELIMINATED CORS ERROR COMBINED W PROXY USE IN URL
 xhr.addEventListener("readystatechange", function () {
@@ -74,8 +62,8 @@ xhr.addEventListener("readystatechange", function () {
      //******************************************************************
     //  Object.keys(events.content).forEach(function (key) {
     //   eventArr.push(key, events.content[key]);
-    // ;
-       //******************************************************************
+    //  })
+    //    //******************************************************************
 //NEED TO PROPERLY LOOP INTO ARRAY
   
     // //******************************************************************
@@ -105,74 +93,16 @@ xhr.addEventListener("readystatechange", function () {
   // console.log("NEW ARRAY "+events)
 
     console.log("eventArr array contains JSON object")
-// console.log(events)
-
-// $(function() {
-
-//   // page is now ready, initialize the calendar...
 
 //   $('#calendar').fullCalendar({
 //     console.log("FullCal")
 //     // put your options and callbacks here
 //   })
-
 // });
-
-
-
 
 //FullCalendar Plugin Mechanics
 $(document).ready(function(){
- $(function()
- {
-  console.log("Full Readout*****   "+ events)
-  //******
-  console.log("YYY"+events.content)
- })
-
-  // dayClick: function() {                     // CREATE AN ALERT
-  //   alert('a day has been clicked!');
-  // }
-
-  // $('#calendar').fullCalendar('next');   //toggles next day or week
-
-  // calendar.render();
-  //render the calendar
-
-  // .fullCalendar( ‘destroy’ )
-  //to clear calendar
-}
-)
-  
-  $(document).ready(function() {
-
-    // $('#calendar').fullCalendar({
-    //   header: {
-    //     left: 'prev,next today',
-    //     center: 'title',
-    //     right: 'month,agendaWeek,agendaDay'
-    //   },
-    //   defaultDate: '2015-02-12',
-    //   editable: true,
-    //   eventLimit: true, // allow "more" link when too many events
-    //   events: data
-    // });
-    
-  //   $('#calendar').on('click', '.fc-next-button', function() {
-  //     //alert('clicked');
-  //     $('#calendar').fullCalendar( 'removeEvents' );
-  //     $('#calendar').fullCalendar( 'addEventSource', newData );
-  //   });
-  //   $('#calendar').on('click', '.fc-prev-button', function() {
-  //     //alert('clicked');
-  //     $('#calendar').fullCalendar( 'removeEvents' );
-  //     $('#calendar').fullCalendar( 'addEventSource', data );
-  //   });
-  // });
-
-
     let calendarEl = document.getElementById('calendar');
-  
     let calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
       initialDate: '2021-10-22',
@@ -185,28 +115,16 @@ $(document).ready(function(){
     
       events: startandend,
       //changed from events: eventArr
-  
-  
+
     });
     calendar.render();
     //Plugin Calendar is rendered
   });
-  
-    document.getElementById("readout1").innerHTML= events
-    // Second on screen readout div below for dev testing
-    // document.getElementById("readout2").innerHTML= events
-
-
-  }
-});
 
 xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://api.bizzabo.com/api/events/");
 xhr.setRequestHeader("accept", "application/vnd.bizzabo.v2.0+json");
 xhr.setRequestHeader("authorization", "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2");
-
 xhr.send(data);
-
-// console.log(events)
 
 const requestCurrent = () => {
   $.ajax({
@@ -223,5 +141,4 @@ const requestCurrent = () => {
   
     console.log("current request Succesful")
   })
-}
-
+}}})
