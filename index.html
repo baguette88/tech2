@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- <link rel='stylesheet' type='text/css' href='fullcalendar.css' /> -->
-    <!-- <script type='text/javascript' src='jquery.js'></script> -->
-    <!-- <script type='text/javascript' src='fullcalendar.js'></script> -->
+
+     <!-- <link rel='stylesheet' type='text/css' href='fullcalendar.css' /> 
+     <script type='text/javascript' src='jquery.js'></script> 
+     <script type='text/javascript' src='fullcalendar.js'></script> -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,47 +19,12 @@ crossorigin="anonymous"></script>
  
 <!-- Calendar initialization-->
     <link href='lib/main.css' rel='stylesheet' />
+    <!-- <link rel='stylesheet' type='text/css' href='fullcalendar.css' />
+<script type='text/javascript' src='jquery.js'></script>
+<script type='text/javascript' src='fullcalendar.js'></script> -->
 </head>
     <script src='lib/main.js'></script>
-    <script>
 
-      document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth'
-
-        
-//MAKE EVENTS ABLE TO BE EDITED
-	// $("#calendar").fullCalendar({
-	// 	header: {
-	// 		left: 'prev,next today',
-	// 		center: 'title',
-	// 		right: 'month,agendaWeek,agendaDay'
-	// 	},
-	// 	defaultDate: '2021-10-19',
-	// 	editable: true,
-	// 	eventLimit: true, // allow "more" link when too many events
-	// 	events: data
-	// });
-	
-//ABILITY TO ADD AND REMOVE EVENTS. #CALENDAR DIV THROWING ERROR
-	// $(#calendar).on('click', '.fc-next-button', function() {
-	// 	//alert('clicked');
-	// 	$('#calendar').fullCalendar( 'removeEvents' );
-	// 	$('#calendar').fullCalendar( 'addEventSource', newData );z
-	// });
-	// $(#calendar).on('click', '.fc-prev-button', function() {
-	// 	//alert('clicked');
-	// 	$('#calendar').fullCalendar( 'removeEvents' );
-	// 	$('#calendar').fullCalendar( 'addEventSource', data );
-	// });
-  
-        });
-        calendar.render();
-        console.log("calendar rendered")
-      });
-
-    </script>
 <body>
 
     <!-- Jeffrey Brown Tech Interview <br>
@@ -131,4 +97,26 @@ crossorigin="anonymous"></script>
 <!-- comment out the above script to remove *old* calendar -->
 <script src="scripts/ajaxcall.js"></script>
 <script src="scripts/script.js"></script>
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log("render function index")
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+  initialDate: '2021-02-17',
+  headerToolbar: {
+  left: 'prev,next today',
+  center: 'title',
+  right: 'dayGridMonth,timeGridWeek,timeGridDay'
+  },
+  //Insert the array of objects created before into the events property to get the corresponding key-value pairs
+  events: startandend,
+    });
+    calendar.render();
+    console.log("calendar rendered")
+    console.log(events.content)
+  });
+  
+      </script> 
 </html>

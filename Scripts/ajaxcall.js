@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
   let startandend = []
   let events
@@ -52,7 +53,7 @@ function getEvents() {
   ///////////////////////
     let eventArr = [];
     // data.push
-    console.log(startandend)
+    
     let data  //scoping issue w repeated variable
         // let events = data
     
@@ -78,10 +79,8 @@ xhr.addEventListener("readystatechange", function () {
      //******************************************************************
     let eventArr = []
     // events.content.push(eventArr)
-    console.log(eventArr[0])
-    console.log(eventArr[1])
-    console.log(eventArr[2])
-    console.log(eventArr[3])
+    // console.log(eventArr) // HAS GAPS
+
 
 
 
@@ -93,7 +92,7 @@ xhr.addEventListener("readystatechange", function () {
      Object.keys(events.content).forEach(function (key) {
       eventArr.push(key, events.content[key]);
      })
-  
+  document.getElementById("readout2").innerHTML = eventArr
   
 //CONSTRUCTOR eventItem
     class eventItem {
@@ -110,33 +109,19 @@ xhr.addEventListener("readystatechange", function () {
     }
   }
   
+  let startandend
   //Loop through array of objects, map variables
   for (i = 1; i < eventArr.length; i++) {
-    events = new eventItem(eventArr[i].startDate, eventArr[i].endDate, eventArr[i].websiteUrl, eventArr[i].coverPhotoUrl, eventArr[i].name, eventArr[i].backgroundColor, eventArr[i].textColor, eventArr[i].display)
+    let events = new eventItem(eventArr[i].startDate, eventArr[i].endDate, eventArr[i].websiteUrl, eventArr[i].coverPhotoUrl, eventArr[i].name, eventArr[i].backgroundColor, eventArr[i].textColor, eventArr[i].display)
     startandend.push(events)
   }
   // console.log(events.content)
 
 //FullCalendar Plugin Mechanics
 
-    let calendarEl = document.getElementById('calendar');
-    let calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth',
-      initialDate: '2021-10-22',
-      headerToolbar: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay'
-      },
-      //TOGGLE THROUGH MONTH/WEEK/DAY
-    
-      events: startandend, //CHANGE THESE 
-      //changed from events: eventArr
-    });
-    calendar.render();
-    //Plugin Calendar is rendered
-  }); // doc.ready ends
 
+
+})
 xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://api.bizzabo.com/api/events/");
 xhr.setRequestHeader("accept", "application/vnd.bizzabo.v2.0+json");
 xhr.setRequestHeader("authorization", "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2");
@@ -154,4 +139,9 @@ const requestCurrent = () => {
     }
   }).then(function (data) {
   })
+
+
+
+
+
 }})
