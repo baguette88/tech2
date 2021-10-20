@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  let startandend = []
 function getEvents() {
     let settings = {
         "async": true,
@@ -83,7 +84,7 @@ xhr.addEventListener("readystatechange", function () {
       }
     }
   
-    let startandend = []
+  
   //Loop through array of objects, map variables
   for (i = 1; i < eventArr.length; i++) {
     
