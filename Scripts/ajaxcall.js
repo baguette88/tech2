@@ -69,14 +69,12 @@ xhr.addEventListener("readystatechange", function () {
     //THIS IS A STRING, CONVERT TO 
     console.log(typeof events)
     let data = eventArr;
+     // //******************************************************************
      //******************************************************************
-     Object.keys(events.content).forEach(function (key) {
-      eventArr.push(key, events.content[key]);
-     })
-    //    //******************************************************************
-//NEED TO PROPERLY LOOP INTO ARRAY
+    //  Object.keys(events.content).forEach(function (key) {
+    //   eventArr.push(key, events.content[key]);
+    //  })
   
-    // //******************************************************************
 
 //CONSTRUCTOR eventItem
     class eventItem {
