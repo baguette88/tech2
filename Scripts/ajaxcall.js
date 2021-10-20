@@ -64,10 +64,7 @@ xhr.addEventListener("readystatechange", function () {
     let events = this.responseXML
     // console.log(events.content)
   }
-    //******************************************************************
-    //**THIS IS WHERE JSON IS GETTING MASHED IN IMPROPERLY */
-   
-    //THIS IS A STRING, CONVERT TO 
+
     console.log(typeof events)
     let data = eventArr;
      // //******************************************************************
@@ -90,24 +87,11 @@ xhr.addEventListener("readystatechange", function () {
         this.photo = photo
       }
     }
-  
-  
   //Loop through array of objects, map variables
   for (i = 1; i < eventArr.length; i++) {
-    
     events = new eventItem(eventArr[i].startDate, eventArr[i].endDate, eventArr[i].websiteUrl, eventArr[i].coverPhotoUrl, eventArr[i].name, eventArr[i].backgroundColor, eventArr[i].textColor, eventArr[i].display)
-  
     startandend.push(events)
   }
-  // console.log("NEW ARRAY "+events)
-
-    console.log("eventArr array contains JSON object")
-
-//   $('#calendar').fullCalendar({
-//     console.log("FullCal")
-//     // put your options and callbacks here
-//   })
-// });
 })
 //FullCalendar Plugin Mechanics
 $(document).ready(function(){
@@ -122,9 +106,8 @@ $(document).ready(function(){
       },
       //TOGGLE THROUGH MONTH/WEEK/DAY
     
-      events: startandend,
+      events: eventArr,
       //changed from events: eventArr
-
     });
     calendar.render();
     //Plugin Calendar is rendered
@@ -146,8 +129,5 @@ const requestCurrent = () => {
     data: {
     }
   }).then(function (data) {
-    // console.log(data)
-  
-    console.log("current request Succesful")
   })
 }})
