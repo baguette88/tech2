@@ -97,27 +97,27 @@ crossorigin="anonymous"></script>
 <!-- comment out the above script to remove *old* calendar -->
 <script src="scripts/ajaxcall.js"></script>
 <script src="scripts/script.js"></script>
-<script>
+<!-- <script> -->
 // let startandend
-  document.addEventListener('DOMContentLoaded', function() {
-    console.log("render function index")
-    var calendarEl = document.getElementById('calendar');
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth',
-  initialDate: '2021-02-17',
-  headerToolbar: {
-  left: 'prev,next today',
-  center: 'title',
-  right: 'dayGridMonth,timeGridWeek,timeGridDay'
-  },
-  //*******Insert the array of objects created before into the events property to get the corresponding key-value pairs
-  events: startandend,
-    });
-    // calendar.addEvent()
-    calendar.render();
-    console.log("calendar rendered")
-    // console.log(events.content) SHOWING UNDEFINED?!
-  });
+  // document.addEventListener('DOMContentLoaded', function() {
+  //   console.log("render function index")
+  //   var calendarEl = document.getElementById('calendar');
+  //   var calendar = new FullCalendar.Calendar(calendarEl, {
+  //     initialView: 'dayGridMonth',
+  // initialDate: '2021-02-17',
+  // headerToolbar: {
+  // left: 'prev,next today',
+  // center: 'title',
+  // right: 'dayGridMonth,timeGridWeek,timeGridDay'
+  // },
+  // //*******Insert the array of objects created before into the events property to get the corresponding key-value pairs
+  // events: startandend,
+  //   });
+  //   // calendar.addEvent()
+  //   calendar.render();
+  //   console.log("calendar rendered")
+  //   // console.log(events.content) SHOWING UNDEFINED?!
+  // });
   
-      </script> 
+      <!-- // </script>  -->
 </html>
