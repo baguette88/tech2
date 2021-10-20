@@ -59,7 +59,7 @@ xhr.addEventListener("readystatechange", function () {
     //******************************************************************
     //**THIS IS WHERE JSON IS GETTING MASHED IN IMPROPERLY */
     let events =this.responseText
-    console.log(events.content)
+    console.log(typeof(events))
     let data = eventArr;
      //******************************************************************
      Object.keys(events.content).forEach(function (key) {
