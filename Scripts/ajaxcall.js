@@ -53,16 +53,16 @@ var xhr = new XMLHttpRequest();
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
     console.log("JSON RECEIEVED:      "+this.responseText)
-    
+  }
     //******************************************************************
     //**THIS IS WHERE JSON IS GETTING MASHED IN IMPROPERLY */
     let events =this.responseText
     
     let data = eventArr;
      //******************************************************************
-    //  Object.keys(events.content).forEach(function (key) {
-    //   eventArr.push(key, events.content[key]);
-    //  })
+     Object.keys(events.content).forEach(function (key) {
+      eventArr.push(key, events.content[key]);
+     })
     //    //******************************************************************
 //NEED TO PROPERLY LOOP INTO ARRAY
   
@@ -141,4 +141,4 @@ const requestCurrent = () => {
   
     console.log("current request Succesful")
   })
-}}})
+}})
