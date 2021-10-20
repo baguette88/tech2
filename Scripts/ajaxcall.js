@@ -153,7 +153,7 @@ const requestCurrent = () => {
   right: 'dayGridMonth,timeGridWeek,timeGridDay'
   },
   //*******Insert the array of objects created before into the events property to get the corresponding key-value pairs
-  events: eventArr,
+  events: events,
     });
     // calendar.addEvent()
     calendar.render();
