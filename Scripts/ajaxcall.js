@@ -1,3 +1,4 @@
+$(document).ready(function(){
 function getEvents() {
     let settings = {
         "async": true,
@@ -60,9 +61,9 @@ xhr.addEventListener("readystatechange", function () {
     
     let data = eventArr;
      //******************************************************************
-     Object.keys(events.content).forEach(function (key) {
-      eventArr.push(key, events.content[key]);
-     })
+    //  Object.keys(events.content).forEach(function (key) {
+    //   eventArr.push(key, events.content[key]);
+    //  })
     //    //******************************************************************
 //NEED TO PROPERLY LOOP INTO ARRAY
   
@@ -99,7 +100,7 @@ xhr.addEventListener("readystatechange", function () {
 //     // put your options and callbacks here
 //   })
 // });
-
+})
 //FullCalendar Plugin Mechanics
 $(document).ready(function(){
     let calendarEl = document.getElementById('calendar');
