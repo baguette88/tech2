@@ -1,4 +1,4 @@
-// ABANDONED AND REPLACED WITH 3RD PARTY PLUGIN
+//REPLACED WITH 3RD PARTY PLUGIN
 // //  let today = new Date();
 //  let currentMonth = today.getMonth();
 //  let currentYear = today.getFullYear();
@@ -9,7 +9,7 @@
  
 //  let monthAndYear = document.getElementById("monthAndYear");
 //  showCalendar(currentMonth, currentYear);
- 
+   
 //  function next() {
 //      currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
 //      currentMonth = (currentMonth + 1) % 12;
