@@ -4,7 +4,6 @@ let greeting;
 
 if (hourNow > 18) {
     greeting = "<b>Good Evening<b>";
-    // add name as template literal
 }else if (hourNow > 11) {
     greeting = "<b id=grt>Good Afternoon</b>";
 } else if (hourNow > 0) {

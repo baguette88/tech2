@@ -58,13 +58,10 @@ function getEvents() {
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
     events = JSON.parse(this.responseText);
-    console.log("Inside function, Events is a  "+ typeof events)
-    console.log("outside of the xhr function events is:  "+typeof events) //currently undefiend
     console.log(events) //currently undefiend
     console.log("Array of Objects Created:")
     console.log(events.content)
-    // document.getElementById("readout2").innerHTML = events.content
-     //******************************************************************
+    document.getElementById("readout2").innerHTML = this.responseText
     let eventArr = []
 
      Object.keys(events.content).forEach(function (key) {

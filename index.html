@@ -25,7 +25,6 @@ crossorigin="anonymous"></script>
 
    <h1> <p id="lblGreetings"> </p></h1>
     <div class="w3-container w3-teal">
-        <!-- <h1>Bizzabo</h1> -->
         <h2 id="localTime"></h2>
       </div>
       <div class="w3-container"></div>
@@ -46,10 +45,7 @@ crossorigin="anonymous"></script>
         <p id="readout1">Readout</p>
       </div>
 </body>
-<!-- Running these scripts after initial HTML so page is not blank with an error -->
 <script src="scripts/greeting.js"></script>
-<!-- <script src="scripts/calendar.js"></script>  -->
-<!-- comment out the above script to remove *old* calendar -->
 <script src="scripts/ajaxcall.js"></script>
 <script src="scripts/script.js"></script>
 <script>
@@ -64,7 +60,7 @@ crossorigin="anonymous"></script>
   center: 'title',
   right: 'dayGridMonth,timeGridWeek,timeGridDay'
   },
-  //*******Insert the array of objects created before into the events property to get the corresponding key-value pairs
+  //***Problem is likely here. Need to properly insert the array of objects created before into the events property to get the corresponding key-value pairs
   events: startandend,
     });
     calendar.render();
