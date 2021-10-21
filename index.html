@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
     integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -27,30 +28,19 @@ crossorigin="anonymous"></script>
 
 <body>
 
-    <!-- Jeffrey Brown Tech Interview <br>
-<br> -->
-   <h1> <p id="lblGreetings"> </p></h1> 
-
+   <h1> <p id="lblGreetings"> </p></h1>
     <div class="w3-container w3-teal">
         <!-- <h1>Bizzabo</h1> -->
         <h2 id="localTime"></h2>
       </div>
-      
-      <div class="w3-container">
-        <!-- <p id="username">{name}</p>
-        <p id="todayDate">{date}</p> -->
-  
-      </div>
+      <div class="w3-container"></div>
        <img src="bizzabo.png" alt="Image or logo of bizzabo">
     
     <div id='calendar'></div>
       
     </div> -->
-    <div class="w3-container w3-teal">
-        <p>Jeffrey Brown - jbrown7407@gmail.com</p>
-      </div>
+    <div class="w3-container w3-teal"><p>Jeffrey Brown - jbrown7407@gmail.com</p></div>
 
-    <!-- <button name="jump" onclick="jump()">Go</button> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
@@ -64,22 +54,16 @@ crossorigin="anonymous"></script>
             crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
             integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-            crossorigin="anonymous"></script>
-
-
-          
+            crossorigin="anonymous"></script>      
         </div>
         
-          <div class="about"> 
-          <br/>
-          <center>
-               <center class="h2">Jeffrey Brown </br> jbrown7407@gmail.com</center> 
-               
+          <div class="about"> <br/>
+         <center>
+              <center class="h2">Jeffrey Brown </br> jbrown7407@gmail.com</center> 
          <br /> <img id="oo7" src="007.jpg">
          <h1><a href="https://www.linkedin.com/in/jeffrey-brown7407/" target="_blank">  <i class="fa fa-linkedin w3-hover-opacity"></i> </a>
-                <a href="https://github.com/jbrown7407" target="_blank"> <i class="fa fa-github w3-hover-opacity"></i> </a> 
-              
-                </center>
+              <a href="https://github.com/jbrown7407" target="_blank"> <i class="fa fa-github w3-hover-opacity"></i> </a> 
+              </center>
           </div>
       <br>
       <div class="w3-container w3-teal">
@@ -98,7 +82,6 @@ crossorigin="anonymous"></script>
 <script src="scripts/ajaxcall.js"></script>
 <script src="scripts/script.js"></script>
 <script>
-
   document.addEventListener('DOMContentLoaded', function() {
     console.log("render function index")
     var calendarEl = document.getElementById('calendar');
@@ -111,13 +94,10 @@ crossorigin="anonymous"></script>
   right: 'dayGridMonth,timeGridWeek,timeGridDay'
   },
   //*******Insert the array of objects created before into the events property to get the corresponding key-value pairs
-  // events: startandend,
+  events: startandend,
     });
-    
     calendar.render();
     console.log("calendar rendered")
-    // console.log(events.content) SHOWING UNDEFINED?!
   });
-  
       </script> 
 </html>
