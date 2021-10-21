@@ -88,7 +88,7 @@ xhr.addEventListener("readystatechange", function () {
     console.log("outside of the xhr function events is:  "+typeof events) //currently undefiend
     console.log(events) //currently undefiend
     console.log(events.content)
-    document.getElementById("readout2.startdate").innerHTML = events.content
+    // document.getElementById("readout2").innerHTML = events.content
      //******************************************************************
 
      //******************************************************************
