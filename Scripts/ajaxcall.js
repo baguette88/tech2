@@ -88,7 +88,7 @@ xhr.addEventListener("readystatechange", function () {
     let events = new eventItem(eventArr[i].startDate, eventArr[i].endDate, eventArr[i].websiteUrl, eventArr[i].coverPhotoUrl, eventArr[i].name, eventArr[i].backgroundColor, eventArr[i].textColor, eventArr[i].display)
     startandend.push(events)
   }
-//FullCalendar Plugin Mechanics
+
 // let startandend
 })
 xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://api.bizzabo.com/api/events/");
